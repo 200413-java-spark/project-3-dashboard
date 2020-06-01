@@ -2,7 +2,7 @@
 Front End Application 
 
 ## Team Leader - Jeff Magina
-### Initial team members
+### Team members 6/1/2020
 - 
 - 
 - 
