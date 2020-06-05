@@ -1,4 +1,4 @@
-package com.github.dashboard;
+package com.github.dashboard.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
