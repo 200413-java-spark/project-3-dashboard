@@ -9,18 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CountyVsOilProductionByYearController {
-	
+
 	@Autowired
 	private CountyVsOilProductionByYearService countyVsOilProductionByYearService;
-	
+
 	@RequestMapping("/CountyVsOilProductionByYear")
 	public List<CountyVsOilProductionByYear> getAllTopics() {
 		return countyVsOilProductionByYearService.getAllData();
 	}
-	
+
 	@RequestMapping("/CountyVsOilProductionByYear/{id}")
 	public CountyVsOilProductionByYear getTopic(@PathVariable int id) {
 		return countyVsOilProductionByYearService.getData(id);
 	}
-
 }
