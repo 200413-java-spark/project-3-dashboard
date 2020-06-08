@@ -9,14 +9,11 @@ const margin = 5;
 const x = d3.scaleBand().range([0, width]);
 const y = d3.scaleLinear().range([height, 0]);
 
-const svg = d3.select().append("svg")
+const svg = d3.select("info").append("svg")
       .attr("viewBox", [0, 0, width, height]);
 
 d3.json('http://localhost:8080/CountyVsOilProductionByYear').then((data) => {
   console.log(data);
-  // data.forEach((d) => {
-  //     d.average = +d.average;
-  // })
   const area = d3.area()
   .defined(d => !isNaN(d.oil_production))
   .x(d => x(d.year))
