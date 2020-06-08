@@ -109,3 +109,13 @@ body{
 .wrapper .main_content .info div{
     margin-bottom: 20px;
 }
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
+  
+  .area {
+    fill: lightsteelblue;
+  }
