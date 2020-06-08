@@ -13,15 +13,15 @@ const svg = d3.select().append("svg")
       .attr("viewBox", [0, 0, width, height]);
 
 d3.json('http://localhost:8080/CountyVsOilProductionByYear').then((data) => {
-  console.log(data)
+  console.log(data);
   // data.forEach((d) => {
   //     d.average = +d.average;
   // })
   const area = d3.area()
-  .defined(d => !isNaN(d.value))
-  .x(d => x(d.date))
+  .defined(d => !isNaN(d.oil_production))
+  .x(d => x(d.year))
   .y0(y(0))
-  .y1(d => y(d.value))
+  .y1(d => y(d.oil_production));
 
   const yAxis = g => g
     .attr("transform", `translate(${margin.left},0)`)
@@ -31,17 +31,11 @@ d3.json('http://localhost:8080/CountyVsOilProductionByYear').then((data) => {
         .attr("x", 3)
         .attr("text-anchor", "start")
         .attr("font-weight", "bold")
-        .text(data.y))
+        .text(data.oil_production));
         
-  const yAxis = g => g
-  .attr("transform", `translate(${margin.left},0)`)
-  .call(d3.axisLeft(y))
-  .call(g => g.select(".domain").remove())
-  .call(g => g.select(".tick:last-of-type text").clone()
-      .attr("x", 3)
-      .attr("text-anchor", "start")
-      .attr("font-weight", "bold")
-      .text(data.y))
+  const xAxis = g => g
+  .attr("transform", `translate(0,${height - margin.bottom})`)
+  .call(d3.axisBottom(x).ticks(width / 80).tickSizeOuter(0));
 
     svg.append("g")
         .call(xAxis);
