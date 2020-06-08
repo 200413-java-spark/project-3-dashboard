@@ -17,23 +17,35 @@ public class CountyVsOilProductionByYearController {
 	private CountyVsOilProductionByYearService countyVsOilProductionByYearService;
 
 	@RequestMapping("/CountyVsOilProductionByYear")
-	public List<CountyVsOilProductionByYearModel> getAllData() {
-		return countyVsOilProductionByYearService.getAllData();
+	public List<CountyVsOilProductionByYearModel> findAll() {
+		return countyVsOilProductionByYearService.findAll();
 	}
 
 	@RequestMapping("/CountyVsOilProductionByYear/{id}")
-	public CountyVsOilProductionByYearModel getSpecificDataById(@PathVariable int id) {
-		return countyVsOilProductionByYearService.getData(id);
+	public CountyVsOilProductionByYearModel findById(@PathVariable int id) {
+		return countyVsOilProductionByYearService.findById(id);
 	}
 
 	@RequestMapping("/CountyVsOilProductionByYear/filter/county/{county}")
-	public List<CountyVsOilProductionByYearModel> getFilteredByCounty(@PathVariable String county) {
-		return countyVsOilProductionByYearService.getFilteredCounty(county);
+	public List<CountyVsOilProductionByYearModel> findByCounty(@PathVariable String county) {
+		return countyVsOilProductionByYearService.findByCounty(county);
 
 	}
 
 	@RequestMapping("/CountyVsOilProductionByYear/filter/year/{year}")
-	public List<CountyVsOilProductionByYearModel> getFilteredByYear(@PathVariable int year) {
-		return countyVsOilProductionByYearService.getFilteredYear(year);
+	public List<CountyVsOilProductionByYearModel> findByYear(@PathVariable int year) {
+		return countyVsOilProductionByYearService.findByYear(year);
 	}
+
+	@RequestMapping("/CountyVsOilProductionByYear/filter/oilproductiongreaterthan/{oilProduction}")
+	public List<CountyVsOilProductionByYearModel> findByOilProductionGreaterThanEqual(
+			@PathVariable double oilProduction) {
+		return countyVsOilProductionByYearService.findByOilProductionGreaterThanEqual(oilProduction);
+	}
+
+	@RequestMapping("/CountyVsOilProductionByYear/filter/oilproductionlessthan/{oilProduction}")
+	public List<CountyVsOilProductionByYearModel> findByOilProductionLessThanEqual(@PathVariable double oilProduction) {
+		return countyVsOilProductionByYearService.findByOilProductionLessThanEqual(oilProduction);
+	}
+
 }
