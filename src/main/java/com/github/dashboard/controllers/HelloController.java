@@ -16,4 +16,14 @@ public class HelloController {
 		return "CountyVsOilProductionByYearView";
 	}
 
+	@RequestMapping("/MapView")
+	public String MapView() {
+		return "MapView";
+	}
+
+	@RequestMapping("/CompanyView")
+	public String CompanyView() {
+		return "CompanyView";
+	}
+
 }
