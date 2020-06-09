@@ -27,14 +27,30 @@
       <div class="header">
         <h3>Map View</h3>
       </div>
-      <div class="info" id="mapViewInfo">
+      <div id="mapView">
 
       </div>
+      <!-- <div id="observablehq-ba488fa1"></div> -->
+      <!-- <div id="observablehq-7deb0a06"></div> -->
     </div>
   </div>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://unpkg.com/topojson-client@3"></script>
   <script src="/mapView.js"></script>
+
+
+  <!-- <div id="observablehq-7deb0a06"></div>
+  <script type="module">import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"; import define from "https://api.observablehq.com/@mbostock/walmarts-growth.js?v=3";
+    const inspect = Inspector.into("#observablehq-7deb0a06");
+    (new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
+  </script> -->
+
+  <!-- <script type="module">
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+    import define from "https://api.observablehq.com/@aale12/walmarts-growth.js?v=3";
+    const inspect = Inspector.into("#observablehq-ba488fa1");
+    (new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
+  </script> -->
 </body>
 
 </html>
