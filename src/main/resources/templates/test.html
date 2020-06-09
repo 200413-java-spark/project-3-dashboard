@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test Test for Data display - incorporate into main site laters</title>
+  <script>
+    alert('Hello, World!');
+  </script>
+</head>
+
+<body>
+  <div id="observablehq-7deb0a06"></div>
+  <script type="module">import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js"; import define from "https://api.observablehq.com/@mbostock/walmarts-growth.js?v=3";
+    const inspect = Inspector.into("#observablehq-7deb0a06");
+    (new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
+  </script>
+</body>
+
+</html>
