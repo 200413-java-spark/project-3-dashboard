@@ -7,25 +7,25 @@ CREATE TABLE county_vs_oil_production_by_year(
 );
 
 Insert Into county_vs_oil_production_by_year (county, oil_production, year) 
-Values ('ny', 100, 2010);
+Values ('Chautauqua', 8645, 2004);
 
 Insert Into county_vs_oil_production_by_year (county, oil_production, year)
-Values ('ny', 200, 2011);
+Values ('Chautauqua', 4529, 2003);
 
 Insert Into county_vs_oil_production_by_year (county, oil_production, year)
-Values ('ma', 200, 2011);
+Values ('Cattaraugus', 4528, 2003);
 
 insert into county_vs_oil_production_by_year (county, oil_production, year)
-values ('Chautauqua',1112, 2017);
+values ('Cattaraugus', 4500, 2002);
 
 insert into county_vs_oil_production_by_year (county, oil_production, year)
-values ('Chautauqua',1020, 2017);
+values ('Chautauqua', 4269, 2012);
 
 insert into county_vs_oil_production_by_year (county, oil_production, year)
-values ('Cattaraugus',1020, 2017);
+values ('Chautauqua', 3530, 2011);
 
 insert into county_vs_oil_production_by_year (county, oil_production, year)
-values ('Steuben',465, 2017);
+values ('Steuben', 465, 2017);
 
 insert into county_vs_oil_production_by_year (county, oil_production, year)
-values ('Steuben',490, 2017);
+values ('Steuben', 490, 2017);
