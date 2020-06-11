@@ -11,18 +11,18 @@ public class geolocationModel {
   private String county;
   private String city;
   private double longitude;
-  private double latitudelongitude;
+  private double latitude;
   private int year;
 
   public geolocationModel() {
 
   }
 
-  public geolocationModel(String county, String city, double longitude, double latitudelongitude, int year) {
+  public geolocationModel(String county, String city, double longitude, double latitude, int year) {
     this.county = county;
     this.city = city;
     this.longitude = longitude;
-    this.latitudelongitude = latitudelongitude;
+    this.latitude = latitude;
     this.year = year;
   }
 
@@ -50,12 +50,12 @@ public class geolocationModel {
     this.longitude = longitude;
   }
 
-  public double getLatitudelongitude() {
-    return latitudelongitude;
+  public double getLatitude() {
+    return latitude;
   }
 
-  public void setLatitudelongitude(double latitudelongitude) {
-    this.latitudelongitude = latitudelongitude;
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
   }
 
   public int getYear() {
