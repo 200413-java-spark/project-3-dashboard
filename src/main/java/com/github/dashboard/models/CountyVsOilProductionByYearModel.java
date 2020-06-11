@@ -39,25 +39,15 @@ public class CountyVsOilProductionByYearModel {
 		return oilProduction;
 	}
 
-//	public void setOilProduction(double oilproduction) {
-//		this.oilProduction = oilproduction;
-//	}
 
 	public Double getGasProduction() {
 		return gasProduction;
 	}
 
-//	public void setGasProduction(double gasProduction) {
-//		this.gasProduction = gasProduction;
-//	}
 
 	public Double getWaterProduction() {
 		return waterProduction;
 	}
-
-//	public void setWaterProduction(double waterProduction) {
-//		this.waterProduction = waterProduction;
-//	}
 
 	public int getYear() {
 		return year;

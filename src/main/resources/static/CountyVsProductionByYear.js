@@ -11,7 +11,6 @@ var test;
 
 d3.selectAll(("input[name='utility']")).on("change", function(){
 	test = (this.value);
-	// console.log(test);
 
   if(test == "Oil"){ 
 	  d3.selectAll(".line").remove();
@@ -22,10 +21,10 @@ d3.json('http://localhost:3000/CountyVsOilProductionByYear').then((data) => {
 
     data.forEach(d => {
         d.year = new Date(+d.year, 0, 1);
-       // d.oil_production = +d.oil_production;
+
     });
     
-    //sorts data ascending
+    // sorts data ascending
     function sortByDate(a,b){
     	return a.year -b.year;
     }
@@ -36,21 +35,8 @@ d3.json('http://localhost:3000/CountyVsOilProductionByYear').then((data) => {
     	return d.county;
     })   
     .entries(data); 
-    
-//    console.log(dataGroup);
-//    
-//    dataGroup = dataGroup.forEach(d => d3.nest()
-//    		.key(function(d){
-//    			return d.year;})
-//    		.rollup(function(v){
-//    			return d3.sum(v, function(d){
-//    				return d.oilProduction;})
-//    							})
-//    )	
-//    .entries(data);
-    
-    console.log(dataGroup);
 
+    console.log(dataGroup);
     
     var lineOpacity = "0.25";
     var lineOpacityHover = "0.85";
@@ -141,7 +127,6 @@ d3.json('http://localhost:3000/CountyVsOilProductionByYear').then((data) => {
 
     data.forEach(d => {
         d.year = new Date(+d.year, 0, 1);
-       // d.oil_production = +d.oil_production;
     });
     
     var dataGroup = d3.nest()
@@ -240,7 +225,6 @@ d3.json('http://localhost:3000/CountyVsOilProductionByYear').then((data) => {
 
     data.forEach(d => {
         d.year = new Date(+d.year, 0, 1);
-       // d.oil_production = +d.oil_production;
     });
     
     var dataGroup = d3.nest()
