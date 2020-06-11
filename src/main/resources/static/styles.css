@@ -79,6 +79,13 @@ body{
     margin-bottom: 5px;
 }
 
+.wrapper .main_content h2{
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .wrapper .main_content .info{
     margin: 20px;
     color: #717171;
@@ -98,3 +105,20 @@ body{
   .area {
     fill: lightsteelblue;
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 1rem;
+  }
+  .grid > div {
+    /*background: #5a5575;*/
+    /*color: rgba(255, 255, 255, 0.753);*/
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  /*body {
+    margin: 2rem;
+    font: 12px system-ui;
+  }*/
