@@ -7,6 +7,17 @@ import org.springframework.stereotype.Repository;
 
 import com.github.dashboard.models.CountyVsOilProductionByYearModel;
 
+/**
+* <h1>County Vs Oil Production By Year Repository (CVO Repository)</h1>
+* <p>This Class acts as the main connection between the COV Controller and the COV Service classes.
+* </p>
+* 
+*
+* @author  FillINLater
+* @version 1.0
+* @since   2020-06-11
+*/
+
 @Repository
 public interface CountyVsOilProductionByYearRepo extends JpaRepository<CountyVsOilProductionByYearModel, Integer> {
 	
