@@ -24,9 +24,10 @@ const margin = ({ top: 20, right: 30, bottom: 30, left: 40 });
         .attr("fill", "grey")
         .attr("stroke", "black")
         .attr("stroke-linejoin", "round")
+        .attr("opacity", 0.3)
         .attr("d", path)
         .style("z-index", -1);
-        
+
         d3.json("https://gist.githubusercontent.com/aale12/869f1f749916392b16d4276df23761dd/raw/7fa981f7fb38c7fbca604192696cb91df09cc16f/geolocationTest").then(data => {
           const dataStorage = data;
           console.log(dataStorage);
