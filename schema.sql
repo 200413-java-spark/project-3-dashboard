@@ -3,14 +3,16 @@ CREATE TABLE county_vs_oil_production_by_year(
         id serial primary key,
         county varchar ,
         oil_production decimal,
+        gas_production decimal,
+        water_production decimal,
         year int
 );
 
-Insert Into county_vs_oil_production_by_year (county, oil_production, year) 
-Values ('Chautauqua', 8645, 2004);
+Insert Into county_vs_oil_production_by_year (county, oil_production, gas_production, water_production, year) 
+Values ('Chautauqua', 8645, 1, 2, 2004);
 
-Insert Into county_vs_oil_production_by_year (county, oil_production, year)
-Values ('Chautauqua', 4529, 2003);
+Insert Into county_vs_oil_production_by_year (county, oil_production, gas_production, water_production, year) 
+Values ('Chautauqua', 4529, 100, 200, 2003);
 
 Insert Into county_vs_oil_production_by_year (county, oil_production, year)
 Values ('Cattaraugus', 4528, 2003);
