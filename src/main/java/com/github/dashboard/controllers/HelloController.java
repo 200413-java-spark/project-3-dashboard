@@ -1,14 +1,29 @@
 package com.github.dashboard.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HelloController {
-	
-	@RequestMapping("/")
+
+	@RequestMapping("/index")
 	public String index() {
-		return "You are in Index!";
+		return "index";
+	}
+
+	@RequestMapping("/CountyVsOilProductionByYearView")
+	public String CountyVsOilProductionByYearView() {
+		return "CountyVsOilProductionByYearView";
+	}
+
+	@RequestMapping("/MapView")
+	public String MapView() {
+		return "MapView";
+	}
+
+	@RequestMapping("/CompanyView")
+	public String CompanyView() {
+		return "CompanyView";
 	}
 
 }
