@@ -20,6 +20,7 @@ CREATE TABLE geolocation
 );
 
 insert into geolocation
+        (county, city, latitude, longitude, year)
 VALUES
         ('Allegany', 'Andover', 42.15605, -77.795231, 2007),
         ('Livingston', 'Caledonia', 42.973152, -77.855225, 2002),
