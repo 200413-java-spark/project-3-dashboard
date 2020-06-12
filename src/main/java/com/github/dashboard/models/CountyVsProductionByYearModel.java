@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity(name = "CountyVsOilProductionByYear")
-public class CountyVsOilProductionByYearModel {
+public class CountyVsProductionByYearModel {
 	@Id
 	private int id;
 
@@ -15,10 +15,10 @@ public class CountyVsOilProductionByYearModel {
 	private Double waterProduction;
 	private int year;
 
-	public CountyVsOilProductionByYearModel() {
+	public CountyVsProductionByYearModel() {
 	}
 
-	public CountyVsOilProductionByYearModel(String county, Double oilProduction, Double gasProduction,
+	public CountyVsProductionByYearModel(String county, Double oilProduction, Double gasProduction,
 			Double waterProduction, int year) {
 		this.county = county;
 		this.oilProduction = oilProduction;

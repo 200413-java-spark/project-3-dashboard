@@ -11,9 +11,9 @@ public class HelloController {
 		return "index";
 	}
 
-	@RequestMapping("/CountyVsOilProductionByYearView")
-	public String CountyVsOilProductionByYearView() {
-		return "CountyVsOilProductionByYearView";
+	@RequestMapping("/CountyVsProductionByYearView")
+	public String CountyVsProductionByYearView() {
+		return "CountyVsProductionByYearView";
 	}
 
 	@RequestMapping("/MapView")

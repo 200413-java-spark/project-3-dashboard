@@ -16,7 +16,7 @@ function createGraph(utility) {
 	d3.selectAll(".line").remove();
 	d3.selectAll(".domain").remove();
 	d3.selectAll(".tick").remove();
-	d3.json('http://localhost:3000/CountyVsOilProductionByYear').then((data) => {
+	d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
 
 		//reformat date
 		data.forEach(d => {
@@ -38,8 +38,6 @@ function createGraph(utility) {
 				return d.county;
 			})
 			.entries(data);
-
-		console.log(dataGroup);
 
 		//display data based on radio button selection
 		if (utility == "oil") {
@@ -89,7 +87,6 @@ function createGraph(utility) {
 				//county text data
 				.on("mousemove", function (d, i) {
 					svg.select(".title-text").remove();
-					svg.select(".rect").remove();
 					svg.append("text")
 						.attr("class", "title-text")
 						.style("fill", "black")
@@ -98,6 +95,7 @@ function createGraph(utility) {
 						.attr("x", d3.mouse(this)[0] + 10)
 						.attr("y", d3.mouse(this)[1] - 15);
 				})
+				
 				.on("mouseout", function (d) {
 					svg.select(".title-text").remove();
 				})
@@ -109,6 +107,7 @@ function createGraph(utility) {
 				.style('stroke', (d, i) => color(i))
 				.style('opacity', lineOpacity)
 				.style("stroke-width", lineStroke)
+
 				.on("mouseover", function (d) {
 					d3.selectAll('.line')
 						.style('opacity', otherLinesOpacityHover);
@@ -117,6 +116,7 @@ function createGraph(utility) {
 						.style("stroke-width", lineStrokeHover)
 						.style("cursor", "pointer");
 				})
+
 				.on("mouseout", function (d) {
 					d3.selectAll(".line")
 						.style('opacity', lineOpacity);
