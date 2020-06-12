@@ -1,5 +1,6 @@
 package com.github.dashboard.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -9,15 +10,20 @@ public class CountyVsOilProductionByYearModel {
 	private int id;
 
 	private String county;
-	private double oilProduction;
+	private Double oilProduction;
+	private Double gasProduction;
+	private Double waterProduction;
 	private int year;
 
 	public CountyVsOilProductionByYearModel() {
 	}
 
-	public CountyVsOilProductionByYearModel(String county, double oil_production, int year) {
+	public CountyVsOilProductionByYearModel(String county, Double oilProduction, Double gasProduction,
+			Double waterProduction, int year) {
 		this.county = county;
-		this.oilProduction = oil_production;
+		this.oilProduction = oilProduction;
+		this.gasProduction = gasProduction;
+		this.waterProduction = waterProduction;
 		this.year = year;
 	}
 
@@ -29,12 +35,18 @@ public class CountyVsOilProductionByYearModel {
 		this.county = county;
 	}
 
-	public double getOil_production() {
+	public Double getOilProduction() {
 		return oilProduction;
 	}
 
-	public void setOil_production(double oil_production) {
-		this.oilProduction = oil_production;
+
+	public Double getGasProduction() {
+		return gasProduction;
+	}
+
+
+	public Double getWaterProduction() {
+		return waterProduction;
 	}
 
 	public int getYear() {

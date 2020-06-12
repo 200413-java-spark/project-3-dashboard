@@ -26,4 +26,9 @@ public class HelloController {
 		return "CompanyView";
 	}
 
+	@RequestMapping("/About")
+	public String AboutView() {
+		return "About";
+	}
+
 }
