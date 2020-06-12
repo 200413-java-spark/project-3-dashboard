@@ -5,3 +5,4 @@ target/
 .project
 test.txt
 test.sql
+*.json
