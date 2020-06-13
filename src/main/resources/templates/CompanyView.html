@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NY State Oil Production</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link type="text/css" rel="stylesheet" href="/selection/tail.select-default.css" />
+</head>
+
+<body>
+    <script type="text/javascript" src="/selection/tail.select.min.js"></script>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>NY State Oil Production</h2>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/MapView">Map</a></li>
+                <li><a href="/CompanyView">Company</a></li>
+                <li><a href="/CountyVsOilProductionByYearView">CountyVsOilView</a></li>
+                <li><a href="#">Example</a></li>
+                <li><a href="#">Example</a></li>
+                <li><a href="#">Example</a></li>
+            </ul>
+        </div>
+        <div class="main_content">
+            <div class="header">
+                <h3>County vs Oil Production by Year</h3>
+            </div>
+            <div class="info">
+                <div>
+                    <h1>NY State Oil Production</h1>
+                </div>
+                <div>
+
+                    <select multiple id="select">
+                        <option>Armstrong Gas Company, LLC</option>
+                        <option>Vertical Energy, Inc.</option>
+                        <option>Gemini Oil Company</option>
+                        <option>SK Enterprises</option>
+                        <option>Texas Keystone, Inc.</option>
+                        <option>Carls, Kevin D</option>
+                        <option>Oconnor, James</option>
+                        <option>Columbia Natural Resources  LLC</option>
+                        <option>Sturdevant, Walter B.</option>
+                        <option>Hydrocarbon Generation, Inc.</option>
+                        <option>Pine Oil Co.</option>
+                        <option>Wilkinson, Robert</option>
+                        <option>Masoodi Mini Ventures, Inc.</option>
+                        <option>Chesapeake Appalachia, L.L.C.</option>
+                    </select>
+
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", function(){
+                            tail.select("select", { 
+                                /* Your Options */ 
+                                search: true,
+                                multiLimit: 5,
+                                hideSelected: true,
+                                hideDisabled: true,
+                                multiShowCount: false,
+                                multiContainer: true
+                            });
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
