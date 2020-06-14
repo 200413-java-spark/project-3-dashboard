@@ -9,6 +9,7 @@ public class CountyVsProductionByYearModel {
 	@Id
 	private int id;
 
+	private String company;
 	private String county;
 	private Double oilProduction;
 	private Double gasProduction;
@@ -18,8 +19,9 @@ public class CountyVsProductionByYearModel {
 	public CountyVsProductionByYearModel() {
 	}
 
-	public CountyVsProductionByYearModel(String county, Double oilProduction, Double gasProduction,
+	public CountyVsProductionByYearModel(String company, String county, Double oilProduction, Double gasProduction,
 			Double waterProduction, int year) {
+		this.company = company;
 		this.county = county;
 		this.oilProduction = oilProduction;
 		this.gasProduction = gasProduction;
@@ -27,12 +29,12 @@ public class CountyVsProductionByYearModel {
 		this.year = year;
 	}
 
-	public String getCounty() {
-		return county;
+	public String getCompany() {
+		return company;
 	}
 
-	public void setCounty(String county) {
-		this.county = county;
+	public String getCounty() {
+		return county;
 	}
 
 	public Double getOilProduction() {
@@ -53,7 +55,4 @@ public class CountyVsProductionByYearModel {
 		return year;
 	}
 
-	public void setYear(int year) {
-		this.year = year;
-	}
 }

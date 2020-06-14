@@ -21,9 +21,9 @@ public class HelloController {
 		return "MapView";
 	}
 
-	@RequestMapping("/CompanyView")
-	public String CompanyView() {
-		return "CompanyView";
+	@RequestMapping("/CompanyVsProductionByYearView")
+	public String CompanyVsProductionByYearView() {
+		return "CompanyVsProductionByYearView";
 	}
 
 	@RequestMapping("/About")
