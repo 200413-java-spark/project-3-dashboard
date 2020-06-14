@@ -26,4 +26,14 @@ public class HelloController {
 		return "CompanyView";
 	}
 
+	@RequestMapping("/About")
+	public String AboutView() {
+		return "About";
+	}
+	
+	@RequestMapping("/StackBarD3")
+	public String StackBarD3() {
+		return "StackBarD3";
+	}
+
 }

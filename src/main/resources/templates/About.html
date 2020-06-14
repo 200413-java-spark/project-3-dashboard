@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>NY State Oil Production</title>
+    <title>NY State Oil, Gas and Water Production</title>
     <link rel="stylesheet" href="/styles.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
@@ -12,7 +12,7 @@
 
     <div class="wrapper">
         <div class="sidebar">
-            <h2>NY State Oil Production</h2>
+            <h2>NY State Oil, Gas and Water Production</h2>
             <ul>
                 <li><a href="/index">Home</a></li>
                 <li><a href="/MapView">Map</a></li>
@@ -20,52 +20,48 @@
                 <li><a href="/CountyVsOilProductionByYearView">CountyVsOilView</a></li>
                 <li><a href="#">Example</a></li>
                 <li><a href="#">Example</a></li>
-                <li><a href="#">Example</a></li>
+                <li><a href="/About">About</a></li>
             </ul>
         </div>
         <div class="main_content">
             <div class="header">
-                <h3>NY State Oil Production Beginning 2001</h3>
+                <h3>NY State Oil, Gas and Water Production</h3>
             </div>
             <div class="info">
-
+                <div>
+                    <h1>NY State Oil, Gas and Water Production Beginning 2001</h1>
+                </div>
                 <div>
                 	<div>
                 	</div>
 
 <p><strong>General Description</strong><br />The Division of Mineral Resources maintains a data management system on wells regulated under the Oil, Gas and Solution Mining Law (OGSML) More than 75,000 wells have been drilled in New York for oil, gas, solution salt mining, stratigraphic, injection, geothermal, brine disposal, and underground gas storage. Computerized records currently exist on roughly 40,000 wells, of which about 14,000 are active. All of this data is created and maintained for the use of the Division, and as such is covered by a disclaimer regarding the use of this data.</p>
-<br>
 <p><strong>Data Collection Methodology</strong><br />Information is provided to the Division of Mineral Resources by regulated operators through various regulatory filings. Most of the information provided in this dataset comes from Annual Well Reports filed every year in the spring. This information is used to regulate the oil and gas industry in New York, as well as track the history of a wellbore&rsquo;s production of oil, gas, or water during its lifecycle.</p>
 <p>Production data is acquired by means of annual well reports submitted by operators to the Division of Mineral Resources in the spring of each year. This data is kept confidential for six months and is released to the Division&rsquo;s public website in early July. During the spring reporting cycle, purchasers and transporters of oil and gas similarly report the quantity of product produced during the reporting year that they either transported or purchased for refining.</p>
-<br>
 <p><strong>Statistical and Analytic Issues</strong><br />This data was collected on a per well basis by each operator and supplied to the Division of Mineral Resources for verification. Not all operators who are sent reports end up filing their production reports on time or to the satisfaction of the Division. Through enforcement activities, late filings have been addressed and added to the datasets after the fact and allow for a more complete assessment of the annual production of oil and gas in New York. Late filings are added to the production dataset when the most current dataset is created for distribution. Approximately 85%-90% of operators end up reporting on time and to a satisfactory level. The rest are handled through enforcement activities.</p>
-<br>
 <p><strong>Limitations of Data Use</strong><br />Data reported on the Annual Well Report is presumed to be accurate and is double checked against reported values from oil and gas purchasers and transporters.</p>
-<br>
 <p><strong>Columns in Dataset</strong></p>
 <ol>
-<li><strong>api_well_number: </strong>American Petroleum Institute 14 digit Unique Well Identification Number</li>
-<li><strong>county: </strong>county that the well is located in</li>
-<li><strong>company_name: </strong>company that contructed well</li>
-<li><strong>api_hole_number: </strong>the 6th-10th digits of API well number, unique API hole number</li>
-<li><strong>sidetrack_code: </strong>the 11th and 12th digits of API well number, with the original vertical well as "00", and the first directional sidetrack as "01".</li>
-<li><strong>completion_code: </strong>2 digit Company completion code</li>
-<li><strong>well_type_code: </strong>refer to "Table 1" for respective well type codes</li>
-<li><strong>production_field: </strong>Production field of well</li>
-<li><strong>well_status_code: </strong>refer to "Table 2" for respective well statuc codes</li>
-<li><strong>well_name: </strong>Name of well</li>
-<li><strong>town: </strong>town where well is located</li>
-<li><strong>producing_Formation: </strong>producing formation for the well</li>
-<li><strong>months_in_production: </strong>number of months in production</li>
-<li><strong>gas_produced_mcf: </strong>amount of gas produced (Mcf)</li>
-<li><strong>water_produced_bbl: </strong>amount of water produced (bbl)</li>
-<li><strong>oil_produced_bbl: </strong>amount of oil produced (bbl)</li>
-<li><strong>reporting_year: </strong>last date record was updated</li>
-<li><strong>new_georeferenced_column: </strong>the city, state and longitude, latitude of where the well is located</li>
-<br>
+<li>api_well_number: American Petroleum Institute 14 digit Unique Well Identification Number</li>
+<li>county: county that the well is located in</li>
+<li>company_name: company that contructed well</li>
+<li>api_hole_number: the 6th-10th digits of API well number, unique API hole number</li>
+<li>sidetrack_code: the 11th and 12th digits of API well number, with the original vertical well as "00", and the first directional sidetrack as "01".</li>
+<li>completion_code: 2 digit Company completion code</li>
+<li>well_type_code: refer to "Table 1" for respective well type codes</li>
+<li>production_field: Production field of well</li>
+<li>well_status_code: refer to "Table 2" for respective well statuc codes</li>
+<li>well_name: Name of well</li>
+<li>town: town where well is located</li>
+<li>producing_Formation: producing formation for the well</li>
+<li>months_in_production: number of months in production</li>
+<li>gas_produced_mcf: amount of gas produced (Mcf)</li>
+<li>water_produced_bbl: amount of water produced (bbl)</li>
+<li>oil_produced_bbl: amount of oil produced (bbl)</li>
+<li>reporting_year: last date record was updated</li>
+<li>new_georeferenced_column: the city, state and longitude, latitude of where the well is located</li>
 </ol>
 <div class="center">
-<br>
 <table border="1" width="37%"><caption><strong>Table 1: Well Type Codes</strong></caption>
 <tbody>
 <tr>
