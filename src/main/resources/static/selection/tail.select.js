@@ -1541,4 +1541,8 @@
 
     // Return
     return select;
+<<<<<<< HEAD
 }));
+=======
+}));
+>>>>>>> adf5bb06915c665e76845dd1f6cfdb7e35770e4e
