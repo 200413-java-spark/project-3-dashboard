@@ -7,52 +7,68 @@ const svg = d3.select("#info").append("svg")
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
+let companies = [];
 
-		//reformat date
-		data.forEach(d => {
-			d.year = new Date(+d.year, 0, 1);
+var select;
 
-		});
+d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
 
-		// sorts data ascending
-		function sortByDate(a, b) {
-			return a.year - b.year;
-		}
-		data = data.sort(sortByDate);
+	//reformat date
+	data.forEach(d => {
+		d.year = new Date(+d.year, 0, 1);
 
-		console.log(data);
+	});
 
-		//sort data into counties
-		var dataGroup = d3.nest()
-			.key(function (d) {
-				return d.company;
-			})
-			.entries(data);
+	// sorts data ascending
+	function sortByDate(a, b) {
+		return a.year - b.year;
+	}
+	data = data.sort(sortByDate);
 
-		console.log(dataGroup);
+	//sort data into counties
+	var dataGroup = d3.nest()
+		.key(function (d) {
+			return d.company;
+		})
+		.entries(data);
 
-		let companies= []; 
-		dataGroup.forEach(d => {
-			companies.push(d.key);
-			console.log(d.key);
-		});
-		console.log(companies);
-					
-		var sel = document.getElementById('TestId');
-		for (var i = 0; i < companies.length; i++) {
-			var opt = document.createElement('option');
-			opt.innerHTML = companies[i];
-			sel.appendChild(opt);
-		}
+	dataGroup.forEach(d => {
+		companies.push(d.key);
+	});
+
+	var sel = document.getElementById('companies');
+	for (var i = 0; i < companies.length; i++) {
+		var opt = document.createElement('option');
+		opt.innerHTML = companies[i];
+		sel.appendChild(opt);
+	}
+
+	select = tail.select("select", {
+		/* Your Options */
+
+		search: true,
+		multiLimit: 5,
+		hideSelected: true,
+		hideDisabled: true,
+		multiShowCount: false,
+		multiContainer: true
+	});
+
+	var utility;
+	d3.selectAll(("input[name='utility']")).on("change", function () {
+		utility = this.value;
+		createGraph(this.value);
 	})
 
-d3.selectAll(("input[name='utility']")).on("change", function () {
-	createGraph(this.value);
+	select.on("change", function () {
+		console.log("hello");
+		console.log(utility);
+		createGraph(utility);
+
+	})
 })
 
 function createGraph(utility) {
-
 	d3.selectAll(".line").remove();
 	d3.selectAll(".domain").remove();
 	d3.selectAll(".tick").remove();
@@ -70,8 +86,6 @@ function createGraph(utility) {
 		}
 		data = data.sort(sortByDate);
 
-		console.log(data);
-
 		//sort data into counties
 		var dataGroup = d3.nest()
 			.key(function (d) {
@@ -79,7 +93,21 @@ function createGraph(utility) {
 			})
 			.entries(data);
 
-		console.log(dataGroup);
+		let selectedOptions = [];
+
+		for (var i = 0; i < select.options.selected.length; i++) {
+			selectedOptions.push(select.options.selected[i].text);
+		}
+
+		let newDataGroup = [];
+
+		for (var i = 0; i < dataGroup.length; i++) {
+			for (var j = 0; j < selectedOptions.length; j++) {
+				if (dataGroup[i].key == selectedOptions[j]) {
+					newDataGroup.push(dataGroup[i]);
+				}
+			}
+		}
 
 		//display data based on radio button selection
 		if (utility == "oil") {
@@ -123,7 +151,7 @@ function createGraph(utility) {
 			var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 			const path = svg.selectAll("path")
-				.data(dataGroup)
+				.data(newDataGroup)
 				.enter()
 				.append("g")
 				//county text data

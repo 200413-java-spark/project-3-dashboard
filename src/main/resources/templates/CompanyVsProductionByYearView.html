@@ -29,47 +29,6 @@
 				<h3>County vs Production by Year</h3>
 			</div>
 
-			<div>
-				<select multiple id="select">
-					<option>Armstrong Gas Company, LLC</option>
-					<option>Vertical Energy, Inc.</option>
-					<option>Gemini Oil Company</option>
-					<option>SK Enterprises</option>
-					<option>Texas Keystone, Inc.</option>
-					<option>Carls, Kevin D</option>
-					<option>Oconnor, James</option>
-					<option>Columbia Natural Resources LLC</option>
-					<option>Sturdevant, Walter B.</option>
-					<option>Hydrocarbon Generation, Inc.</option>
-					<option>Pine Oil Co.</option>
-					<option>Wilkinson, Robert</option>
-					<option>Masoodi Mini Ventures, Inc.</option>
-					<option>Chesapeake Appalachia, L.L.C.</option>
-				</select>
-				<script type="text/javascript">
-					
-					document.addEventListener("click", function () {
-						tail.select("select", {
-							/* Your Options */
-							
-							search: true,
-							multiLimit: 5,
-							hideSelected: true,
-							hideDisabled: true,
-							multiShowCount: false,
-							multiContainer: true
-						});
-					});
-				</script>
-			</div>
-
-			<div>
-				<select multiple id="TestId">
-					<option>Armstrong Gas Company, LLC</option>
-				</select>
-
-			</div>
-
 			<div class="info" id="info">
 				<form id="utility">
 					<input type="radio" name="utility" value="oil">Oil
@@ -78,12 +37,17 @@
 				</form>
 			</div>
 
+			<div>
+				<select multiple id="companies">
+				</select>
+			</div>
+
 		</div>
 	</div>
 
-
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="/CompanyVsProductionByYear.js"></script>
+
 </body>
 
 </html>

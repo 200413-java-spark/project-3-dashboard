@@ -41,11 +41,9 @@ public class CountyVsProductionByYearModel {
 		return oilProduction;
 	}
 
-
 	public Double getGasProduction() {
 		return gasProduction;
 	}
-
 
 	public Double getWaterProduction() {
 		return waterProduction;
