@@ -8,7 +8,6 @@ const svg = d3.select("#info").append("svg")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 let companies = [];
-
 var select;
 
 d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
