@@ -7,6 +7,46 @@ const svg = d3.select("#info").append("svg")
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+	d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
+
+		//reformat date
+		data.forEach(d => {
+			d.year = new Date(+d.year, 0, 1);
+
+		});
+
+		// sorts data ascending
+		function sortByDate(a, b) {
+			return a.year - b.year;
+		}
+		data = data.sort(sortByDate);
+
+		console.log(data);
+
+		//sort data into counties
+		var dataGroup = d3.nest()
+			.key(function (d) {
+				return d.company;
+			})
+			.entries(data);
+
+		console.log(dataGroup);
+
+		let companies= []; 
+		dataGroup.forEach(d => {
+			companies.push(d.key);
+			console.log(d.key);
+		});
+		console.log(companies);
+					
+		var sel = document.getElementById('TestId');
+		for (var i = 0; i < companies.length; i++) {
+			var opt = document.createElement('option');
+			opt.innerHTML = companies[i];
+			sel.appendChild(opt);
+		}
+	})
+
 d3.selectAll(("input[name='utility']")).on("change", function () {
 	createGraph(this.value);
 })
@@ -35,9 +75,11 @@ function createGraph(utility) {
 		//sort data into counties
 		var dataGroup = d3.nest()
 			.key(function (d) {
-				return d.county;
+				return d.company;
 			})
 			.entries(data);
+
+		console.log(dataGroup);
 
 		//display data based on radio button selection
 		if (utility == "oil") {
@@ -95,7 +137,7 @@ function createGraph(utility) {
 						.attr("x", d3.mouse(this)[0] + 10)
 						.attr("y", d3.mouse(this)[1] - 15);
 				})
-				
+
 				.on("mouseout", function (d) {
 					svg.select(".title-text").remove();
 				})
