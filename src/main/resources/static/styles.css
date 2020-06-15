@@ -119,3 +119,33 @@ body{
   .area {
     fill: lightsteelblue;
   }
+  
+
+
+
+
+
+
+
+.region {
+    stroke: #fff;
+    fill: grey92;
+}
+
+.hover {
+    fill: blue;
+}
+
+.selected{
+    stroke: #fff;
+    fill: orange;
+}
+
+#regName{
+    position: absolute;
+    top:  150px;
+    height: 22px;
+    width: 250px;
+    padding: 3px;
+    text-align:center;        
+}

@@ -25,36 +25,246 @@
         </div>
         <div class="main_content">
             <div class="header">
-                <h3>County vs Oil Production by Year</h3>
+                <h3>NY State Oil Production Beginning 2001</h3>
             </div>
             <div class="info">
+
                 <div>
-                    <h1>NY State Oil Production</h1>
+                	<div>
+                	</div>
+
+<p><strong>General Description</strong><br />The Division of Mineral Resources maintains a data management system on wells regulated under the Oil, Gas and Solution Mining Law (OGSML) More than 75,000 wells have been drilled in New York for oil, gas, solution salt mining, stratigraphic, injection, geothermal, brine disposal, and underground gas storage. Computerized records currently exist on roughly 40,000 wells, of which about 14,000 are active. All of this data is created and maintained for the use of the Division, and as such is covered by a disclaimer regarding the use of this data.</p>
+<br>
+<p><strong>Data Collection Methodology</strong><br />Information is provided to the Division of Mineral Resources by regulated operators through various regulatory filings. Most of the information provided in this dataset comes from Annual Well Reports filed every year in the spring. This information is used to regulate the oil and gas industry in New York, as well as track the history of a wellbore&rsquo;s production of oil, gas, or water during its lifecycle.</p>
+<p>Production data is acquired by means of annual well reports submitted by operators to the Division of Mineral Resources in the spring of each year. This data is kept confidential for six months and is released to the Division&rsquo;s public website in early July. During the spring reporting cycle, purchasers and transporters of oil and gas similarly report the quantity of product produced during the reporting year that they either transported or purchased for refining.</p>
+<br>
+<p><strong>Statistical and Analytic Issues</strong><br />This data was collected on a per well basis by each operator and supplied to the Division of Mineral Resources for verification. Not all operators who are sent reports end up filing their production reports on time or to the satisfaction of the Division. Through enforcement activities, late filings have been addressed and added to the datasets after the fact and allow for a more complete assessment of the annual production of oil and gas in New York. Late filings are added to the production dataset when the most current dataset is created for distribution. Approximately 85%-90% of operators end up reporting on time and to a satisfactory level. The rest are handled through enforcement activities.</p>
+<br>
+<p><strong>Limitations of Data Use</strong><br />Data reported on the Annual Well Report is presumed to be accurate and is double checked against reported values from oil and gas purchasers and transporters.</p>
+<br>
+<p><strong>Columns in Dataset</strong></p>
+<ol>
+<li><strong>api_well_number: </strong>American Petroleum Institute 14 digit Unique Well Identification Number</li>
+<li><strong>county: </strong>county that the well is located in</li>
+<li><strong>company_name: </strong>company that contructed well</li>
+<li><strong>api_hole_number: </strong>the 6th-10th digits of API well number, unique API hole number</li>
+<li><strong>sidetrack_code: </strong>the 11th and 12th digits of API well number, with the original vertical well as "00", and the first directional sidetrack as "01".</li>
+<li><strong>completion_code: </strong>2 digit Company completion code</li>
+<li><strong>well_type_code: </strong>refer to "Table 1" for respective well type codes</li>
+<li><strong>production_field: </strong>Production field of well</li>
+<li><strong>well_status_code: </strong>refer to "Table 2" for respective well statuc codes</li>
+<li><strong>well_name: </strong>Name of well</li>
+<li><strong>town: </strong>town where well is located</li>
+<li><strong>producing_Formation: </strong>producing formation for the well</li>
+<li><strong>months_in_production: </strong>number of months in production</li>
+<li><strong>gas_produced_mcf: </strong>amount of gas produced (Mcf)</li>
+<li><strong>water_produced_bbl: </strong>amount of water produced (bbl)</li>
+<li><strong>oil_produced_bbl: </strong>amount of oil produced (bbl)</li>
+<li><strong>reporting_year: </strong>last date record was updated</li>
+<li><strong>new_georeferenced_column: </strong>the city, state and longitude, latitude of where the well is located</li>
+<br>
+</ol>
+<div class="center">
+<br>
+<table border="1" width="37%"><caption><strong>Table 1: Well Type Codes</strong></caption>
+<tbody>
+<tr>
+<td>BR</td>
+<td>Brine</td>
+</tr>
+<tr>
+<td>DH</td>
+<td>Dry Hole</td>
+</tr>
+<tr>
+<td>DS</td>
+<td>Disposal</td>
+</tr>
+<tr>
+<td>DW</td>
+<td>Dry Wildcat</td>
+</tr>
+<tr>
+<td>GD</td>
+<td>Gas Development</td>
+</tr>
+<tr>
+<td>GE</td>
+<td>Gas Extension</td>
+</tr>
+<tr>
+<td>GW</td>
+<td>Gas Wildcat</td>
+</tr>
+<tr>
+<td>IG</td>
+<td>Gas Injection Well</td>
+</tr>
+<tr>
+<td>IW</td>
+<td>Enhanced Oil Recovery - Injection</td>
+</tr>
+<tr>
+<td>LP</td>
+<td>Liquefied Petroleum Gas Storage</td>
+</tr>
+<tr>
+<td>MB</td>
+<td>Monitoring Brine</td>
+</tr>
+<tr>
+<td>MM</td>
+<td>Monitoring Miscellaneous</td>
+</tr>
+<tr>
+<td>MS</td>
+<td>Monitoring Storage</td>
+</tr>
+<tr>
+<td>NL</td>
+<td>Not Listed</td>
+</tr>
+<tr>
+<td>OB</td>
+<td>Observation Well</td>
+</tr>
+<tr>
+<td>OD</td>
+<td>Oil Development</td>
+</tr>
+<tr>
+<td>OE</td>
+<td>Oil Extension</td>
+</tr>
+<tr>
+<td>OW</td>
+<td>Oil Wildcat</td>
+</tr>
+<tr>
+<td>SG</td>
+<td>Stratigraphic</td>
+</tr>
+<tr>
+<td>ST</td>
+<td>Storage</td>
+</tr>
+<tr>
+<td>TH</td>
+<td>Geothermal</td>
+</tr>
+<tr>
+<td>UN</td>
+<td>Unknown</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<div class="center">
+<table border="1"><caption><strong>Table 2: Well Status Codes</strong></caption>
+<tbody>
+<tr>
+<td>AC</td>
+<td>Active</td>
+</tr>
+<tr>
+<td valign="TOP">AR</td>
+<td>Application Received to Drill/Plug/Convert</td>
+</tr>
+<tr>
+<td>CA</td>
+<td>Cancelled</td>
+</tr>
+<tr>
+<td>DC</td>
+<td>Drilling Completed</td>
+</tr>
+<tr>
+<td>DD</td>
+<td>Drilled Deeper</td>
+</tr>
+<tr>
+<td>DG</td>
+<td>Drilling in Progress</td>
+</tr>
+<tr>
+<td>DH</td>
+<td>Dry Hole</td>
+</tr>
+<tr>
+<td>EX</td>
+<td>Expired Permit</td>
+</tr>
+<tr>
+<td>IN</td>
+<td>Inactive</td>
+</tr>
+<tr>
+<td>NR</td>
+<td valign="TOP">Not Reported on AWR</td>
+</tr>
+<tr>
+<td valign="TOP">PA</td>
+<td>Plugged and Abandoned</td>
+</tr>
+<tr>
+<td>PI</td>
+<td>Permit Issued</td>
+</tr>
+<tr>
+<td>PM</td>
+<td valign="TOP">Plugged Back Multilateral</td>
+</tr>
+<tr>
+<td>RE</td>
+<td>Refunded Fee</td>
+</tr>
+<tr>
+<td valign="TOP">RW</td>
+<td>Released - Water Well</td>
+</tr>
+<tr>
+<td valign="TOP">SI</td>
+<td>Shut-In</td>
+</tr>
+<tr>
+<td valign="TOP">TA</td>
+<td>Temporarily Abandoned</td>
+</tr>
+<tr>
+<td>TR</td>
+<td>Transferred Permit</td>
+</tr>
+<tr>
+<td>UN</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>Unknown Located</td>
+</tr>
+<tr>
+<td>UM</td>
+<td>Unknown Not Found</td>
+</tr>
+<tr>
+<td>VP</td>
+<td>Voided Permit</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>Information from:&nbsp;<a href="https://data.ny.gov/Energy-Environment/Oil-and-Gas-Annual-Production-Beginning-2001/mxea-iw3u">New York State Dept. of Environmental Conservation Division of Mineral Resources</a></p>
+
+
+
+                	<div>
+                	</div>
+
+
                 </div>
-                <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque
-                    accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet
-                    voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint,
-                    beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni
-                    tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus
-                    temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non
-                    obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae
-                    dolor quod dignissimos perferendis eos? Consequuntur!</div>
-                <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque
-                    accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet
-                    voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint,
-                    beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni
-                    tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus
-                    temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non
-                    obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae
-                    dolor quod dignissimos perferendis eos? Consequuntur!</div>
-                <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque
-                    accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet
-                    voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint,
-                    beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni
-                    tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus
-                    temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non
-                    obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae
-                    dolor quod dignissimos perferendis eos? Consequuntur!</div>
+                
             </div>
         </div>
     </div>
