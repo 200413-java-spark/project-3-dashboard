@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
-	<script src="/CountyVsProductionByYear.js"></script>
+	<!-- <script src="/CountyVsProductionByYear.js"></script> -->
 	<script>
 		const margin = ({ top: 20, right: 30, bottom: 30, left: 40 });
 		const width = 960 - margin.left - margin.right;
@@ -59,7 +59,7 @@
 			d3.selectAll(".line").remove();
 			d3.selectAll(".domain").remove();
 			d3.selectAll(".tick").remove();
-			d3.json('http://localhost:3000/CountyVsOilProductionByYear').then((data) => {
+			d3.json('https://gist.githubusercontent.com/aale12/b36bf8b641f2e64bb305f7f28a61195a/raw/bf3b2aa459e1ad78e2482fadae6bfb74d2a9f763/countyvsoilyeartest').then((data) => {
 
 				//reformat date
 				data.forEach(d => {
@@ -76,12 +76,12 @@
 				console.log(data);
 
 				//sort data into counties
-				var dataGroup = d3.nest()
+				const dataGroup = d3.nest()
 					.key(function (d) {
 						return d.county;
 					})
 					.entries(data);
-
+				console.log("dataGroup is: ");
 				console.log(dataGroup);
 
 				//display data based on radio button selection
