@@ -8,6 +8,17 @@ import org.springframework.stereotype.Service;
 import com.github.dashboard.models.CountyVsOilProductionByYearModel;
 import com.github.dashboard.repositories.CountyVsOilProductionByYearRepo;
 
+/**
+* <h1>County Vs Oil Production By Year Service (CVO Service)</h1>
+* <p>
+*This class holds the main methods that are invoked by the CVO Controller.
+* </p>
+* 
+*
+* @author  FillINLater
+* @version 1.0
+* @since   2020-06-11
+*/
 
 @Service
 public class CountyVsOilProductionByYearService {
