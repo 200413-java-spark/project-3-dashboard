@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="dashboard.css" rel="stylesheet">
-  <title>County vs Oil View</title>
+  <title>About</title>
 
   <style>
     .bd-placeholder-img {
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-  <!-- Top navigation bar -->
+  <!-- Top Navigation Bar-->
   <nav class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">OIL AND GAS PRODUCTION</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
@@ -71,9 +71,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="CountyVsOilProductionByYearView">
+              <a class="nav-link" href="CountyVsOilProductionByYearView">
                 <span data-feather="bar-chart-2"></span>
-                CountyvsOilView <span class="sr-only">(current)</span>
+                CountyvsOilView
               </a>
             </li>
             <li class="nav-item">
@@ -98,9 +98,9 @@
           </h6>
           <ul class="nav flex-column mb-2">
             <li class="nav-item">
-              <a class="nav-link" href="aboutus">
+              <a class="nav-link active" href="aboutus">
                 <span data-feather="file-text"></span>
-                About
+                About <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
@@ -125,11 +125,11 @@
         </div>
       </nav>
 
-      <!-- Page title and some buttons-->
+      <!-- Display Page title and buttons-->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div
           class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">County vs Oil</h1>
+          <h1 class="h2">About</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -141,9 +141,108 @@
             </button>
           </div>
         </div>
+        <!-- All page content below -->
+        <!-- About me section with a picture-->
+        <section class="about-us-section">
+          <div class="container p-1 p-sm-3">
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2>About our Project</h2>
+                <hr />
+              </div>
 
-        <!-- Page content below -->
+              <div class="col-md-3">
+                <img class="img-fluid"
+                  src="https://plsadaptive.s3.amazonaws.com/eco/images/channel_content/images/offshore_platform.jpg"
+                  alt="oil and gas picture">
+              </div>
 
+              <div class="col-md-9">
+                <p>"NY State Oil Production" is a project developed by Revature's April 23rd 2020 Big Data Batch.
+                  The purpose of our application is to use all the concepts learned throughout the training program to
+                  build an automated
+                  big data streaming pipeline. Our data source consists of oil and gas information from New York State
+                  Department of Environmental
+                  Conservation Division of Mineral Resources, and our main goal is to provide a visual representation in
+                  real time of the history
+                  of a wellbore's production of oil, gas, or water during its lifecycle. We will provide a Map view of
+                  the state of New York and some
+                  interesting findings displayed in graphs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr />
+
+        <!-- Group leads section -->
+        <section class="our-team-section">
+          <div class="container marketing">
+
+            <!-- Two columns of text below -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2>Our Team Leads</h2>
+                <hr />
+              </div>
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://st2.depositphotos.com/3369547/11386/v/950/depositphotos_113863530-stock-illustration-avatar-man-icon-people-design.jpg"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>DevOps</h2>
+                <p>The DevOps team is led by Sutter Grune. They are in charge of setting up the kafka cluster and stream
+                  data from our source to a consumer, making sure all the proper connections
+                  are well established and up and running.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#devops" role="button">View technologies
+                    &raquo;</a></p>
+              </div><!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://cdn3.iconfinder.com/data/icons/businessman-and-business-woman-avatar/64/Businessman_business_woman_Avatar-05-512.png"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>Quality Assurance</h2>
+                <p>The QA team is led by John Medlock. They are in charge of conducting unit testing, as well as
+                  integration testing
+                  to make sure that every piece of code is reviewed and the quality of the program is at its highest.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#QA" role="button">View technologies &raquo;</a>
+                </p>
+              </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+          </div>
+
+          <div class="container marketing">
+
+            <!-- Two columns of text below -->
+            <div class="row">
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://st2.depositphotos.com/3369547/11386/v/950/depositphotos_113863580-stock-illustration-avatar-man-icon-people-design.jpg"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>Spark</h2>
+                <p>The Spark team is led by Phuc Le. They are in charge of setting up the java streaming in order
+                  to consume the source data and perform useful transformations that will later be
+                  persisted to a PostgreSQL database.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#spark" role="button">View technologies &raquo;</a>
+                </p>
+              </div><!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://cdn0.iconfinder.com/data/icons/activities-flat-colorful/2048/2145_-_Holding_flowers-512.png"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>Dashboard</h2>
+                <p>The Dashbpard team is led by Jeff Magina. They are in charge of creating the web view for
+                  the data that is being streamed. Designing, implemeting, and deploying a functional
+                  dashboard is their main responsability.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#dashboard" role="button">View technologies
+                    &raquo;</a></p>
+              </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+          </div>
+        </section>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
