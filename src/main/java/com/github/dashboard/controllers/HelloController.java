@@ -36,4 +36,9 @@ public class HelloController {
 		return "StackBarD3";
 	}
 
+	@RequestMapping("/?county={county}")
+	public String specificCount() {
+		return "County";
+	}
+
 }

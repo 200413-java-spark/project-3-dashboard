@@ -29,7 +29,6 @@ public class CountyVsProductionByYearController {
 	@RequestMapping("/CountyVsProductionByYear/filter/county/{county}")
 	public List<CountyVsProductionByYearModel> findByCounty(@PathVariable String county) {
 		return countyVsProductionByYearService.findByCounty(county);
-
 	}
 
 	@RequestMapping("/CountyVsProductionByYear/filter/year/{year}")

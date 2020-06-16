@@ -32,7 +32,9 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
       .data(topojson.feature(dataTopo, dataTopo.objects.counties).features)
       .enter()
       .append("a")
-      .attr("xlink:href", "http://www.google.com") // customize "http://localhost:3000//countyName" /////////////////////////////
+      .attr("xlink:href", function (d) {
+        return "http://localhost:3000/?county=" + d.properties.NAME;// customize "http://localhost:3000//countyName" /////////////////////////////
+      }) 
       .append("path")
       .attr("fill", "LightGray")
       .attr("stroke", "white")
