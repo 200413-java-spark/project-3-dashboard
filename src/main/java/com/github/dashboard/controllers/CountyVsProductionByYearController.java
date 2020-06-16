@@ -16,7 +16,7 @@ public class CountyVsProductionByYearController {
 	@Autowired
 	private CountyVsProductionByYearService countyVsProductionByYearService;
 
-	@RequestMapping("/CountyVsOilProductionByYear")
+	@RequestMapping("/CountyVsProductionByYear")
 	public List<CountyVsProductionByYearModel> findAll() {
 		return countyVsProductionByYearService.findAll();
 	}
@@ -35,5 +35,4 @@ public class CountyVsProductionByYearController {
 	public List<CountyVsProductionByYearModel> findByYear(@PathVariable int year) {
 		return countyVsProductionByYearService.findByreportingyear(year);
 	}
-
 }

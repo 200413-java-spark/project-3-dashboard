@@ -2,25 +2,23 @@ package com.github.dashboard.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 
 @Entity(name = "countyvsoilproductionbyyear")
-@IdClass(CountyId.class)
 public class CountyVsProductionByYearModel {
 
 	@Id
+	private int id;
 	private String county;
 	private Double totaloil;
 	private Double totalwater;
 	private Double totalgas;
-	@Id
-	private Integer reportingyear;
+	private String reportingyear;
 
 	public CountyVsProductionByYearModel() {
 	}
 
 	public CountyVsProductionByYearModel(String county, Double totaloil, Double totalwater, Double totalgas,
-			Integer reportingyear) {
+			String reportingyear) {
 		this.county = county;
 		this.totaloil = totaloil;
 		this.totalwater = totalwater;
@@ -44,9 +42,8 @@ public class CountyVsProductionByYearModel {
 		return totalgas;
 	}
 
-	public Integer getReportingyear() {
+	public String getReportingyear() {
 		return reportingyear;
 	}
-
 
 }

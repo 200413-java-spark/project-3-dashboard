@@ -22,7 +22,7 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
     geometries: dataTopo.objects.cb_2015_new_york_county_20m.geometries
   };
   // Displays Data Bubbles(blue dots)
-  d3.json("https://gist.githubusercontent.com/aale12/87abb273b78a454c73b795a2a88ecb42/raw/54d98e11987b39d792925940e99e2ba2c512bca0/newLongLatData").then(data => {
+  d3.json("http://localhost:8080/geolocationNotNull").then(data => {
     const dataStorage = data;
     console.log(dataStorage);
     console.log(data);
@@ -33,8 +33,8 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
       .enter()
       .append("a")
       .attr("xlink:href", function (d) {
-        return "http://localhost:3000/county/" + d.properties.NAME;// customize "http://localhost:3000//countyName" /////////////////////////////
-      }) 
+        return "http://localhost:8080/county/" + d.properties.NAME;// customize "http://localhost:3000//countyName" /////////////////////////////
+      })
       .append("path")
       .attr("fill", "LightGray")
       .attr("stroke", "white")
@@ -47,8 +47,8 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
           .duration(200)
           .style("opacity", 0.9);
         tooltip.html("County: " + d.properties.NAME)
-          .style("left", (d3.event.pageX) + "px")
-          .style("top", (d3.event.pageY - 28) + "px");
+          .style("left", (d3.mouse(this)[0] + 20) + "px")
+          .style("top", (d3.mouse(this)[1] + 60) + "px");
       })
       .on("mouseout", function (d) {
         tooltip.transition()
@@ -57,40 +57,44 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
       })
 
     //longlat data
-    data.forEach(d => {
-      const p = projection([d.longitude, d.latitude, d.year]);
-      p.year = parseYear(d.year);
-      console.log(p);
-      svg.append("circle")
-        .attr("fill", "blue")
-        .attr("opacity", 0.7)  // makes it not a solid blue
-        .style("z-index", 1)
-        .attr("transform", `translate(${[p[0], p[1]]})`)
-        .attr("r", 5) 		// CHANGE RADIUS based on number of wells (larger/vs smaller circles(bubbles))
-        .attr("d", path)
-        .attr("city", d.city)
-        .on("mouseover", function () {
-          d3.select(this)
-            .attr("r", 12);
-          //console.log(d);
-          tooltip.transition()
-            .duration(200)
-            .style("opacity", 0.9);
-          tooltip.html("City: " + d.city + "<br> Oil Production: " + d.oil
-            + "<br> Water Production: " + d.water
-            + "<br> Gas Production: " + d.gas
-            + "<br> Reporting Year: " + d.year)
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
-        })
-        .on("mouseout", function () {
-          d3.select(this)
-            .attr("r", 5);
-          tooltip.transition()
-            .duration(500)
-            .style("opacity", 0);
-        })
-    })
-    console.log(data);
-  });
-})
+    for (i = 0; i < Object.keys(data).length; i++) {
+      if (data[i] === null) {
+        continue
+      } else {
+        console.log(data[i]);
+        const p = projection([data[i].latitude, data[i].longitude, data[i].year]);
+        console.log(p);
+        p.year = parseYear(data[i].year);
+        svg.append("circle")
+          .attr("fill", "blue")
+          .attr("opacity", 0.7)  // makes it not a solid blue
+          .style("z-index", 1)
+          .attr("transform", `translate(${[p[0], p[1]]})`)
+          .attr("r", 5) 		// CHANGE RADIUS based on number of wells (larger/vs smaller circles(bubbles))
+          .attr("d", path)
+          .attr("city", data[i].city)
+          .on("mouseover", function () {
+            d3.select(this)
+              .attr("r", 12);
+            //console.log(d);
+            tooltip.transition()
+              .duration(200)
+              .style("opacity", 0.9);
+            tooltip.html("City: " + data[i].city + "<br> Oil Production: " + data[i].oil
+              + "<br> Water Production: " + data[i].water
+              + "<br> Gas Production: " + data[i].gas
+              + "<br> Reporting Year: " + data[i].year)
+              .style("left", (d3.mouse(this)[0] + 20) + "px")
+              .style("top", (d3.mouse(this)[1] + 60) + "px");
+          })
+          .on("mouseout", function () {
+            d3.select(this)
+              .attr("r", 5);
+            tooltip.transition()
+              .duration(500)
+              .style("opacity", 0);
+          })
+      }
+    }
+  })
+});

@@ -1,196 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>NY State Oil, Gas and Water Production</title>
-	<link rel="stylesheet" href="/styles.css">
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-	<link type="text/css" rel="stylesheet" href="/selection/tail.select-default.css" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="/selection/tail.select-default.css" />
+  <link href="dashboard.css" rel="stylesheet">
+  <title>County vs Oil View</title>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<script type="text/javascript" src="/selection/tail.select.min.js"></script>
-	<div class="wrapper">
-		<div class="sidebar">
-			<h2>NY State Oil, Gas and Water Production</h2>
-			<ul>
-				<li><a href="/index">Home</a></li>
-				<li><a href="/MapView">Map</a></li>
-				<li><a href="/CompanyVsProductionByYearView">Company</a></li>
-				<li><a href="/CountyVsProductionByYearView">CountyVsOilView</a></li>
-				<li><a href="#">Example</a></li>
-				<li><a href="#">Example</a></li>
-				<li><a href="/About">About</a></li>
-			</ul>
-		</div>
-		<div class="main_content">
-			<div class="header">
-				<h3>County vs Production by Year</h3>
-			</div>
-			<div class="info" id="info">
+  <!-- Top navigation bar -->
+  <nav class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">OIL AND GAS PRODUCTION</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-white w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link active" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
 
-				<form id="utility">
-					<input type="radio" name="utility" value="oil">Oil
-					<input type="radio" name="utility" value="gas">Gas
-					<input type="radio" name="utility" value="water">Water<br>
-				</form>
-			</div>
+  <!-- Sidebar -->
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="index">
+                <span data-feather="home"></span>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="MapView">
+                <span data-feather="map"></span>
+                Map
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CompanyView">
+                <span data-feather="briefcase"></span>
+                Company
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="CountyVsProductionByYearView">
+                <span data-feather="bar-chart-2"></span>
+                CountyvsOilView <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Graph1">
+                <span data-feather="bar-chart-2"></span>
+                Example
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Example
+              </a>
+            </li>
+          </ul>
 
-			<div>
-				<select multiple id="counties">
-				</select>
-			</div>
-		</div>
-	</div>
-	<script src="https://d3js.org/d3.v5.min.js"></script>
-	<!-- <script src="/CountyVsProductionByYear.js"></script> -->
-	<script>
-		const margin = ({ top: 20, right: 30, bottom: 30, left: 40 });
-		const width = 960 - margin.left - margin.right;
-		const height = 500 - margin.top - margin.bottom;
-		const svg = d3.select("#info").append("svg")
-			.attr("width", width + margin.left + margin.right)
-			.attr("height", height + margin.top + margin.bottom)
-			.append("g")
-			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Documentation</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus">
+                <span data-feather="file-text"></span>
+                About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="technologies">
+                <span data-feather="file-text"></span>
+                Technologies
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="members">
+                <span data-feather="file-text"></span>
+                Members
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                Future Work
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
 
-		d3.selectAll(("input[name='utility']")).on("change", function () {
-			createGraph(this.value);
-		})
 
-		function createGraph(utility) {
+  <!-- Page title and some buttons-->
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">County vs Oil</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
+      </div>
+    </div>
 
-			d3.selectAll(".line").remove();
-			d3.selectAll(".domain").remove();
-			d3.selectAll(".tick").remove();
-			d3.json('https://gist.githubusercontent.com/aale12/b36bf8b641f2e64bb305f7f28a61195a/raw/bf3b2aa459e1ad78e2482fadae6bfb74d2a9f763/countyvsoilyeartest').then((data) => {
+    <!-- Page content below -->
+    <div id="info">
 
-				//reformat date
-				data.forEach(d => {
-					d.year = new Date(+d.year, 0, 1);
-
-				});
-
-				// sorts data ascending
-				function sortByDate(a, b) {
-					return a.year - b.year;
-				}
-				data = data.sort(sortByDate);
-
-				console.log(data);
-
-				//sort data into counties
-				const dataGroup = d3.nest()
-					.key(function (d) {
-						return d.county;
-					})
-					.entries(data);
-				console.log("dataGroup is: ");
-				console.log(dataGroup);
-
-				dataGroup.forEach(d => {
-					d.values.forEach(s => {
-
-					})
-				})
-
-				//display data based on radio button selection
-				if (utility == "oil") {
-					const valueLine = d3.line()
-						.x(d => x(d.year))
-						.y(d => y(d.oilProduction))
-						.defined(function (d) { return d.oilProduction || d.oilProduction === '0' });
-
-					const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-					const y = d3.scaleLinear().domain([0, d3.max(data, d => d.oilProduction)]).nice().range([height, 0]);
-					drawGraph(valueLine, x, y);
-
-				} else if (utility == "gas") {
-					const valueLine = d3.line()
-						.x(d => x(d.year))
-						.y(d => y(d.gasProduction))
-						.defined(function (d) { return d.gasProduction || d.gasProduction === '0' });
-
-					const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-					const y = d3.scaleLinear().domain([0, d3.max(data, d => d.gasProduction)]).nice().range([height, 0]);
-					drawGraph(valueLine, x, y);
-
-				} else if (utility == "water") {
-					const valueLine = d3.line()
-						.x(d => x(d.year))
-						.y(d => y(d.waterProduction))
-						.defined(function (d) { return d.waterProduction || d.waterProduction === '0' });
-
-					const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-					const y = d3.scaleLinear().domain([0, d3.max(data, d => d.waterProduction)]).nice().range([height, 0]);
-					drawGraph(valueLine, x, y)
-				}
-
-				function drawGraph(valueLine, x, y) {
-					const lineOpacity = "0.25";
-					const lineOpacityHover = "0.85";
-					const otherLinesOpacityHover = "0.1";
-					const lineStroke = "3.5px";
-					const lineStrokeHover = "4.5px";
-
-					var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-					const path = svg.selectAll("path")
-						.data(dataGroup)
-						.enter()
-						.append("g")
-						//county text data
-						.on("mousemove", function (d, i) {
-							svg.select(".title-text").remove();
-							svg.select(".rect").remove();
-							svg.append("text")
-								.attr("class", "title-text")
-								.style("fill", "black")
-								.text(d.key)
-								.attr("text-anchor", "middle")
-								.attr("x", d3.mouse(this)[0] + 10)
-								.attr("y", d3.mouse(this)[1] - 15);
-						})
-						.on("mouseout", function (d) {
-							svg.select(".title-text").remove();
-						})
-
-						//line data
-						.append('path')
-						.attr('class', 'line')
-						.attr('d', d => valueLine(d.values))
-						.style('stroke', (d, i) => color(i))
-						.style('opacity', lineOpacity)
-						.style("stroke-width", lineStroke)
-						.on("mouseover", function (d) {
-							d3.selectAll('.line')
-								.style('opacity', otherLinesOpacityHover);
-							d3.select(this)
-								.style('opacity', lineOpacityHover)
-								.style("stroke-width", lineStrokeHover)
-								.style("cursor", "pointer");
-						})
-						.on("mouseout", function (d) {
-							d3.selectAll(".line")
-								.style('opacity', lineOpacity);
-							d3.select(this)
-								.style("stroke-width", lineStroke)
-								.style("cursor", "none");
-						});
-
-					// add the X Axis
-					svg.append("g")
-						.attr("transform", "translate(0," + height + ")")
-						.call(d3.axisBottom(x));
-
-					// add the Y Axis
-					svg.append("g")
-						.call(d3.axisLeft(y));
-				}
-			})
-		}
-	</script>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <!-- Optional JavaScript -->
+    <script type="text/javascript" src="/selection/tail.select.min.js"></script>
+    <script src="CountyVsProductionByYear.js"></script>
 </body>
 
 </html>

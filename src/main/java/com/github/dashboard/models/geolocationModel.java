@@ -1,29 +1,41 @@
 package com.github.dashboard.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name = "geolocation")
+import org.springframework.lang.Nullable;
+
+@Entity(name = "locationyearly")
 public class geolocationModel {
   @Id
-  private int id;
+  private Integer id;
   private String county;
-  private String city;
-  private double longitude;
-  private double latitude;
-  private double gas;
-  private double oil;
-  private double water;
-  private int year;
+  private String town;
+
+  private Double longitude;
+
+  private Double latitude;
+
+  @Column(nullable = true)
+  private String gas;
+
+  @Column(nullable = true)
+  private String oil;
+
+  @Column(nullable = true)
+  private String water;
+
+  private Integer year;
 
   public geolocationModel() {
 
   }
 
-  public geolocationModel(String county, String city, double latitude, double longitude, double gas, double water,
-      double oil, int year) {
+  public geolocationModel(String county, String town, Double latitude, Double longitude, String gas, String water,
+      String oil, Integer year) {
     this.county = county;
-    this.city = city;
+    this.town = town;
     this.longitude = longitude;
     this.latitude = latitude;
     this.gas = gas;
@@ -36,31 +48,34 @@ public class geolocationModel {
     return county;
   }
 
-  public String getCity() {
-    return city;
+  public String getTown() {
+    return town;
   }
 
-  public double getLongitude() {
+  public Double getLongitude() {
     return longitude;
   }
 
-  public double getLatitude() {
+  public Double getLatitude() {
     return latitude;
   }
 
-  public int getYear() {
+  public Integer getYear() {
     return year;
   }
 
-  public double getGas() {
+  @Nullable
+  public String getGas() {
     return gas;
   }
 
-  public double getOil() {
+  @Nullable
+  public String getOil() {
     return oil;
   }
 
-  public double getWater() {
+  @Nullable
+  public String getWater() {
     return water;
   }
 }
