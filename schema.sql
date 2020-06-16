@@ -39,8 +39,7 @@ VALUES
         ('Chemung', 'Horseheads', 42.167526, -76.820713, 20538.0, 0.0, 0.0, 2008),
         ('Onondaga', 'Spafford', 42.804128, -76.264764, 0.0, 0.0, 0.0, 2006),
         ('Allegany', 'Cuba', 42.219049, -78.276633, 0.0, 0.0, 0.0, 2006),
-        ('Cayuga', 'Genoa', 42.66942, -76.528146, 0.0, 0.0, null, 2006)
-,
+        ('Cayuga', 'Genoa', 42.66942, -76.528146, 0.0, 0.0, null, 2006);
 
 
 Insert Into county_vs_oil_production_by_year
