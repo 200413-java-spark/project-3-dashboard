@@ -17,18 +17,5 @@ public class CountyVsProductionByYearService {
 	
 	public List<CountyVsProductionByYearModel> findAll() {
 		return countyVsProductionByYearRepo.findAll();
-	}
-	
-	public CountyVsProductionByYearModel findById(int id) {
-		return countyVsProductionByYearRepo.findById(id).get();
-	}
-	
-	public List<CountyVsProductionByYearModel> findByCounty(String county) {
-		return countyVsProductionByYearRepo.findByCounty(county);
-	}
-	
-	public List<CountyVsProductionByYearModel> findByYear(int year) {
-		return countyVsProductionByYearRepo.findByYear(year);
-	}
-	
+	}	
 }

@@ -1,56 +1,52 @@
 package com.github.dashboard.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 
-@Entity(name = "CountyVsOilProductionByYear")
+@Entity(name = "countyvsoilproductionbyyear")
+@IdClass(CountyId.class)
 public class CountyVsProductionByYearModel {
-	@Id
-	private int id;
 
-	private String company;
+	@Id
 	private String county;
-	private Double oilProduction;
-	private Double gasProduction;
-	private Double waterProduction;
-	private int year;
+	private Double totaloil;
+	private Double totalwater;
+	private Double totalgas;
+	@Id
+	private Integer reportingyear;
 
 	public CountyVsProductionByYearModel() {
 	}
 
-	public CountyVsProductionByYearModel(String company, String county, Double oilProduction, Double gasProduction,
-			Double waterProduction, int year) {
-		this.company = company;
+	public CountyVsProductionByYearModel(String county, Double totaloil, Double totalwater, Double totalgas,
+			Integer reportingyear) {
 		this.county = county;
-		this.oilProduction = oilProduction;
-		this.gasProduction = gasProduction;
-		this.waterProduction = waterProduction;
-		this.year = year;
-	}
-
-	public String getCompany() {
-		return company;
+		this.totaloil = totaloil;
+		this.totalwater = totalwater;
+		this.totalgas = totalgas;
+		this.reportingyear = reportingyear;
 	}
 
 	public String getCounty() {
 		return county;
 	}
 
-	public Double getOilProduction() {
-		return oilProduction;
+	public Double getTotaloil() {
+		return totaloil;
 	}
 
-	public Double getGasProduction() {
-		return gasProduction;
+	public Double getTotalwater() {
+		return totalwater;
 	}
 
-	public Double getWaterProduction() {
-		return waterProduction;
+	public Double getTotalgas() {
+		return totalgas;
 	}
 
-	public int getYear() {
-		return year;
+	public Integer getReportingyear() {
+		return reportingyear;
 	}
+
 
 }

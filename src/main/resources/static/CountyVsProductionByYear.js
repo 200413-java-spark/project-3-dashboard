@@ -1,4 +1,4 @@
-const margin = ({ top: 20, right: 30, bottom: 30, left: 40 });
+const margin = ({ top: 20, right: 30, bottom: 30, left: 80 });
 const width = 960 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 const svg = d3.select("#info").append("svg")
@@ -13,15 +13,17 @@ var select;
 
 d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
 
+console.log(data);
+
 	//reformat date
 	data.forEach(d => {
-		d.year = new Date(+d.year, 0, 1);
+		d.reportingyear = new Date(+d.reportingyear, 0, 1);
 
 	});
 
 	// sorts data ascending
 	function sortByDate(a, b) {
-		return a.year - b.year;
+		return a.reportingyear - b.reportingyear;
 	}
 	data = data.sort(sortByDate);
 
@@ -47,7 +49,7 @@ d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
 		/* Your Options */
 
 		search: true,
-		multiLimit: 5,
+		multiLimit: 32,
 		hideSelected: true,
 		hideDisabled: true,
 		multiShowCount: false,
@@ -76,13 +78,12 @@ function createGraph(utility) {
 
 		//reformat date
 		data.forEach(d => {
-			d.year = new Date(+d.year, 0, 1);
-
+			d.reportingyear = new Date(+d.reportingyear, 0, 1);
 		});
 
 		// sorts data ascending
 		function sortByDate(a, b) {
-			return a.year - b.year;
+			return a.reportingyear - b.reportingyear;
 		}
 		data = data.sort(sortByDate);
 
@@ -112,32 +113,32 @@ function createGraph(utility) {
 		//display data based on radio button selection
 		if (utility == "oil") {
 			const valueLine = d3.line()
-				.x(d => x(d.year))
-				.y(d => y(d.oilProduction))
-				.defined(function (d) { return d.oilProduction || d.oilProduction === '0' });
+				.x(d => x(d.reportingyear))
+				.y(d => y(d.totaloil))
+				.defined(function (d) { return d.totaloil || d.totaloil === '0' });
 
-			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.oilProduction)]).nice().range([height, 0]);
+			const x = d3.scaleTime().domain(d3.extent(data, d => d.reportingyear)).range([0, width]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totaloil)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y);
 
 		} else if (utility == "gas") {
 			const valueLine = d3.line()
-				.x(d => x(d.year))
-				.y(d => y(d.gasProduction))
-				.defined(function (d) { return d.gasProduction || d.gasProduction === '0' });
+				.x(d => x(d.reportingyear))
+				.y(d => y(d.totalgas))
+				.defined(function (d) { return d.totalgas || d.totalgas === '0' });
 
-			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.gasProduction)]).nice().range([height, 0]);
+			const x = d3.scaleTime().domain(d3.extent(data, d => d.reportingyear)).range([0, width]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totalgas)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y);
 
 		} else if (utility == "water") {
 			const valueLine = d3.line()
-				.x(d => x(d.year))
-				.y(d => y(d.waterProduction))
-				.defined(function (d) { return d.waterProduction || d.waterProduction === '0' });
+				.x(d => x(d.reportingyear))
+				.y(d => y(d.totalwater))
+				.defined(function (d) { return d.totalwater || d.totalwater === '0' });
 
-			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.waterProduction)]).nice().range([height, 0]);
+			const x = d3.scaleTime().domain(d3.extent(data, d => d.reportingyear)).range([0, width]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totalwater)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y)
 		}
 

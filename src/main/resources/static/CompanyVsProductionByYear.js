@@ -10,7 +10,7 @@ const svg = d3.select("#info").append("svg")
 let companies = [];
 var select;
 
-d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
+d3.json('http://localhost:3000/CompanyVsProductionByYear').then((data) => {
 
 	//reformat date
 	data.forEach(d => {
@@ -27,7 +27,7 @@ d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
 	//sort data into counties
 	var dataGroup = d3.nest()
 		.key(function (d) {
-			return d.company;
+			return d.companyname;
 		})
 		.entries(data);
 
@@ -71,7 +71,7 @@ function createGraph(utility) {
 	d3.selectAll(".line").remove();
 	d3.selectAll(".domain").remove();
 	d3.selectAll(".tick").remove();
-	d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
+	d3.json('http://localhost:3000/CompanyVsProductionByYear').then((data) => {
 
 		//reformat date
 		data.forEach(d => {
@@ -88,7 +88,7 @@ function createGraph(utility) {
 		//sort data into counties
 		var dataGroup = d3.nest()
 			.key(function (d) {
-				return d.company;
+				return d.companyname;
 			})
 			.entries(data);
 
@@ -112,31 +112,31 @@ function createGraph(utility) {
 		if (utility == "oil") {
 			const valueLine = d3.line()
 				.x(d => x(d.year))
-				.y(d => y(d.oilProduction))
-				.defined(function (d) { return d.oilProduction || d.oilProduction === '0' });
+				.y(d => y(d.totaloil))
+				.defined(function (d) { return d.totaloil || d.totaloil === '0' });
 
 			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.oilProduction)]).nice().range([height, 0]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totaloil)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y);
 
 		} else if (utility == "gas") {
 			const valueLine = d3.line()
 				.x(d => x(d.year))
-				.y(d => y(d.gasProduction))
-				.defined(function (d) { return d.gasProduction || d.gasProduction === '0' });
+				.y(d => y(d.gastotal))
+				.defined(function (d) { return d.gastotal || d.gastotal === '0' });
 
 			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.gasProduction)]).nice().range([height, 0]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.gastotal)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y);
 
 		} else if (utility == "water") {
 			const valueLine = d3.line()
 				.x(d => x(d.year))
-				.y(d => y(d.waterProduction))
-				.defined(function (d) { return d.waterProduction || d.waterProduction === '0' });
+				.y(d => y(d.totalwater))
+				.defined(function (d) { return d.totalwater || d.totalwater === '0' });
 
 			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.waterProduction)]).nice().range([height, 0]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totalwater)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y)
 		}
 
@@ -153,7 +153,7 @@ function createGraph(utility) {
 				.data(newDataGroup)
 				.enter()
 				.append("g")
-				//county text data
+				//company text data
 				.on("mousemove", function (d, i) {
 					svg.select(".title-text").remove();
 					svg.append("text")
