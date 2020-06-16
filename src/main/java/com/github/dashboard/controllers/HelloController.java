@@ -42,4 +42,24 @@ public class HelloController {
 		return "County";
 	}
 
+	@RequestMapping("/aboutus")
+	public String aboutus() {
+		return "aboutus";
+	}
+
+	@RequestMapping("/members")
+	public String members() {
+		return "members";
+	}
+
+	@RequestMapping("/technologies")
+	public String technologies() {
+		return "technologies";
+	}
+
+	@RequestMapping("/Graph1")
+	public String Graph1() {
+		return "Graph1";
+	}
+
 }
