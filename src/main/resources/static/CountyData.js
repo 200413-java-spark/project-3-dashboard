@@ -147,9 +147,9 @@ d3.json('http://localhost:3000//CountyVsProductionByYear/filter/county/' + count
     .style("border-radius", "5px")
     .style("opacity", 0.5);
   tooltip.append("text")
-    .attr("x", 15)
+    .attr("x", 0)
     .attr("dy", "1.2em")
-    .style("text-anchor", "middle")
+    .style("text-anchor", "right")
     .attr("font-size", "12px")
     .attr("font-weight", "bold");
 });
