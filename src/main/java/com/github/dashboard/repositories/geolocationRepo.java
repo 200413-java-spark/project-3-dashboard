@@ -10,6 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface geolocationRepo extends JpaRepository<geolocationModel, IntegerDescriptor> {
-
   List<geolocationModel> findAll();
 }

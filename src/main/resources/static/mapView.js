@@ -30,9 +30,9 @@
 	        .attr("opacity", 1)
 	        .attr("d", path)
 	        .attr("class", "region")
-            .on("mouseover", function (d) {   
+            .on("mouseover", () => {
                 d3.select(this).attr("class", "region hover"); // on mouse over change color
-              d3.select(this).on("mouseout", function(d) {
+              d3.select(this).on("mouseout", () => {
     			d3.select(this).attr("class", "region");  // return color to normal
               })
             })
@@ -43,14 +43,14 @@
 	    .data(topojson.feature(data, data.objects.counties).features)
 	    .enter()
 	    .append("svg:text")
-	    .text(function(d){
-	        return d.properties.NAME; //////////////////////// GETS COUNTY NAME OF CURRENT LOCATION
+	    .text(d => {
+	        d.properties.NAME; //////////////////////// GETS COUNTY NAME OF CURRENT LOCATION
 	    })
-	    .attr("x", function(d){
-	        return path.centroid(d)[0];
+	    .attr("x", d => {
+	        path.centroid(d)[0];
 	    })
-	    .attr("y", function(d){
-	        return  path.centroid(d)[1];
+	    .attr("y", d => {
+	        path.centroid(d)[1];
 	    })
 	    .attr("text-anchor","middle")
 	    .attr('font-size','6pt');

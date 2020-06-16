@@ -16,15 +16,32 @@ CREATE TABLE geolocation
         city varchar,
         latitude decimal,
         longitude decimal,
+        gas decimal,
+        water decimal,
+        oil decimal,
         year int
 );
 
 insert into geolocation
-        (county, city, latitude, longitude, year)
+        (county, city, latitude, longitude, gas, water, oil, year)
 VALUES
-        ('Allegany', 'Andover', 42.15605, -77.795231, 2007),
-        ('Livingston', 'Caledonia', 42.973152, -77.855225, 2002),
-        ('Chautauqua', 'Harmony', 42.074924, -79.486378, 2002);
+        ('Otsego', 'Hartwick', 42.659893, -75.048865, 0.0, 0.0, 0.0, 2005),
+        ('Herkimer', 'Stark', 42.917299, -74.821143, 0.0, 0.0, null, 2005),
+        ('Cayuga', 'Mentz', 43.034584, -76.623778, 0.0, 0.0, null, 2005),
+        ('Steuben', 'West Almond', 42.299818, -77.883578, 1412.0, 95.0, 325.0, 2014),
+        ('Broome', 'Vestal', 42.085651, -76.049207, 0.0, 0.0, 0.0, 2009),
+        ('Otsego', 'Maryland', 42.56651, -74.886746, 0.0, 0.0, 0.0, 2009),
+        ('Wyoming', 'Eagle', 42.574499, -78.254614, 0.0, 0.0, null, 2008),
+        ('Allegany', 'Hume', 42.474497, -78.13564, 0.0, 0.0, 0.0, 2008),
+        ('Cayuga', 'Sempronius', 42.729539, -76.315137, 0.0, 0.0, 0.0, 2008),
+        ('Chenango', 'Coventry', 42.316013, -75.638474, 0.0, 0.0, null, 2008),
+        ('Chenango', 'Oxford', 42.442134, -75.597522, 0.0, 0.0, null, 2008),
+        ('Chemung', 'Horseheads', 42.167526, -76.820713, 20538.0, 0.0, 0.0, 2008),
+        ('Onondaga', 'Spafford', 42.804128, -76.264764, 0.0, 0.0, 0.0, 2006),
+        ('Allegany', 'Cuba', 42.219049, -78.276633, 0.0, 0.0, 0.0, 2006),
+        ('Cayuga', 'Genoa', 42.66942, -76.528146, 0.0, 0.0, null, 2006)
+,
+
 
 Insert Into county_vs_oil_production_by_year
         (county, oil_production, gas_production, water_production, year)
@@ -171,7 +188,6 @@ insert into county_vs_oil_production_by_year
 values
         ('Chautauqua', 3530, 2011);
 
-<<<<<<< HEAD
 insert into county_vs_oil_production_by_year
         (county, oil_production, year)
 values
@@ -181,7 +197,6 @@ insert into county_vs_oil_production_by_year
         (county, oil_production, year)
 values
         ('Steuben', 490, 2017);
-=======
 Insert Into county_vs_oil_production_by_year
         (county, oil_production, year)
 Values
@@ -207,4 +222,3 @@ insert into county_vs_oil_production_by_year
 values
         ('Steuben', 7500, 2013);
 
->>>>>>> adf5bb06915c665e76845dd1f6cfdb7e35770e4e

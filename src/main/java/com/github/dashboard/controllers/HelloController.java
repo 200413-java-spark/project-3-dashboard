@@ -30,13 +30,10 @@ public class HelloController {
 	public String AboutView() {
 		return "About";
 	}
-<<<<<<< HEAD
-=======
-	
+
 	@RequestMapping("/StackBarD3")
 	public String StackBarD3() {
 		return "StackBarD3";
 	}
->>>>>>> 33d18d99e6363fcd571dbfdc5d556b49bb9cb987
 
 }

@@ -16,7 +16,7 @@ public class CountyVsProductionByYearController {
 	@Autowired
 	private CountyVsProductionByYearService countyVsProductionByYearService;
 
-	@RequestMapping("/CountyVsProductionByYear")
+	@RequestMapping("/CountyVsOilProductionByYear")
 	public List<CountyVsProductionByYearModel> findAll() {
 		return countyVsProductionByYearService.findAll();
 	}
