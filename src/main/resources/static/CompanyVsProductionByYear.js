@@ -7,56 +7,71 @@ const svg = d3.select("#info").append("svg")
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
+let companies = [];
+var select;
 
-		//reformat date
-		data.forEach(d => {
-			d.year = new Date(+d.year, 0, 1);
+d3.json('http://localhost:3000/CompanyVsProductionByYear').then((data) => {
 
-		});
+	//reformat date
+	data.forEach(d => {
+		d.year = new Date(+d.year, 0, 1);
 
-		// sorts data ascending
-		function sortByDate(a, b) {
-			return a.year - b.year;
-		}
-		data = data.sort(sortByDate);
+	});
 
-		console.log(data);
+	// sorts data ascending
+	function sortByDate(a, b) {
+		return a.year - b.year;
+	}
+	data = data.sort(sortByDate);
 
-		//sort data into counties
-		var dataGroup = d3.nest()
-			.key(function (d) {
-				return d.company;
-			})
-			.entries(data);
+	//sort data into counties
+	var dataGroup = d3.nest()
+		.key(function (d) {
+			return d.companyname;
+		})
+		.entries(data);
 
-		console.log(dataGroup);
+	dataGroup.forEach(d => {
+		companies.push(d.key);
+	});
 
-		let companies= []; 
-		dataGroup.forEach(d => {
-			companies.push(d.key);
-			console.log(d.key);
-		});
-		console.log(companies);
-					
-		var sel = document.getElementById('TestId');
-		for (var i = 0; i < companies.length; i++) {
-			var opt = document.createElement('option');
-			opt.innerHTML = companies[i];
-			sel.appendChild(opt);
-		}
+	var sel = document.getElementById('companies');
+	for (var i = 0; i < companies.length; i++) {
+		var opt = document.createElement('option');
+		opt.innerHTML = companies[i];
+		sel.appendChild(opt);
+	}
+
+	select = tail.select("select", {
+		/* Your Options */
+
+		search: true,
+		multiLimit: 5,
+		hideSelected: true,
+		hideDisabled: true,
+		multiShowCount: false,
+		multiContainer: true
+	});
+
+	var utility;
+	d3.selectAll(("input[name='utility']")).on("change", function () {
+		utility = this.value;
+		createGraph(this.value);
 	})
 
-d3.selectAll(("input[name='utility']")).on("change", function () {
-	createGraph(this.value);
+	select.on("change", function () {
+		console.log("hello");
+		console.log(utility);
+		createGraph(utility);
+
+	})
 })
 
 function createGraph(utility) {
-
 	d3.selectAll(".line").remove();
 	d3.selectAll(".domain").remove();
 	d3.selectAll(".tick").remove();
-	d3.json('http://localhost:3000/CountyVsProductionByYear').then((data) => {
+	d3.json('http://localhost:3000/CompanyVsProductionByYear').then((data) => {
 
 		//reformat date
 		data.forEach(d => {
@@ -70,46 +85,58 @@ function createGraph(utility) {
 		}
 		data = data.sort(sortByDate);
 
-		console.log(data);
-
 		//sort data into counties
 		var dataGroup = d3.nest()
 			.key(function (d) {
-				return d.company;
+				return d.companyname;
 			})
 			.entries(data);
 
-		console.log(dataGroup);
+		let selectedOptions = [];
+
+		for (var i = 0; i < select.options.selected.length; i++) {
+			selectedOptions.push(select.options.selected[i].text);
+		}
+
+		let newDataGroup = [];
+
+		for (var i = 0; i < dataGroup.length; i++) {
+			for (var j = 0; j < selectedOptions.length; j++) {
+				if (dataGroup[i].key == selectedOptions[j]) {
+					newDataGroup.push(dataGroup[i]);
+				}
+			}
+		}
 
 		//display data based on radio button selection
 		if (utility == "oil") {
 			const valueLine = d3.line()
 				.x(d => x(d.year))
-				.y(d => y(d.oilProduction))
-				.defined(function (d) { return d.oilProduction || d.oilProduction === '0' });
+				.y(d => y(d.totaloil))
+				.defined(function (d) { return d.totaloil || d.totaloil === '0' });
 
 			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.oilProduction)]).nice().range([height, 0]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totaloil)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y);
 
 		} else if (utility == "gas") {
 			const valueLine = d3.line()
 				.x(d => x(d.year))
-				.y(d => y(d.gasProduction))
-				.defined(function (d) { return d.gasProduction || d.gasProduction === '0' });
+				.y(d => y(d.gastotal))
+				.defined(function (d) { return d.gastotal || d.gastotal === '0' });
 
 			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.gasProduction)]).nice().range([height, 0]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.gastotal)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y);
 
 		} else if (utility == "water") {
 			const valueLine = d3.line()
 				.x(d => x(d.year))
-				.y(d => y(d.waterProduction))
-				.defined(function (d) { return d.waterProduction || d.waterProduction === '0' });
+				.y(d => y(d.totalwater))
+				.defined(function (d) { return d.totalwater || d.totalwater === '0' });
 
 			const x = d3.scaleTime().domain(d3.extent(data, d => d.year)).range([0, width]);
-			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.waterProduction)]).nice().range([height, 0]);
+			const y = d3.scaleLinear().domain([0, d3.max(data, d => d.totalwater)]).nice().range([height, 0]);
 			drawGraph(valueLine, x, y)
 		}
 
@@ -123,10 +150,10 @@ function createGraph(utility) {
 			var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 			const path = svg.selectAll("path")
-				.data(dataGroup)
+				.data(newDataGroup)
 				.enter()
 				.append("g")
-				//county text data
+				//company text data
 				.on("mousemove", function (d, i) {
 					svg.select(".title-text").remove();
 					svg.append("text")
