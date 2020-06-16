@@ -1,6 +1,7 @@
 package com.github.dashboard.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -36,8 +37,8 @@ public class HelloController {
 		return "StackBarD3";
 	}
 
-	@RequestMapping("/?county={county}")
-	public String specificCount() {
+	@RequestMapping("/county/{county}")
+	public String specificCounty(@PathVariable String county) {
 		return "County";
 	}
 

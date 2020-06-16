@@ -3,13 +3,29 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <style>
+  <style type="text/css">
+    svg {
+      font: 10px sans-serif;
+      shape-rendering: crispEdges;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+    }
+
+    path.domain {
+      stroke: none;
+    }
+
+    .y .tick line {
+      stroke: #ddd;
+    }
   </style>
-  <title id="countyTabTitle"></title>
+  <title id="countyTabTitle">Test Title</title>
   <link rel="stylesheet" href="/styles.css">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-
-
 </head>
 
 <body>
@@ -40,8 +56,7 @@
       <!-- <div id="observablehq-7deb0a06"></div> -->
     </div>
   </div>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://unpkg.com/topojson-client@3"></script>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="/CountyData.js"></script>
   <script>
   </script>

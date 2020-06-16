@@ -3,6 +3,7 @@ package com.github.dashboard.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,6 @@ public class CountyVsProductionByYearController {
 		return countyVsProductionByYearService.findAll();
 	}
 
-<<<<<<< HEAD
 	@RequestMapping("/CountyVsProductionByYear/{id}")
 	public CountyVsProductionByYearModel findById(@PathVariable int id) {
 		return countyVsProductionByYearService.findById(id);
@@ -33,9 +33,7 @@ public class CountyVsProductionByYearController {
 
 	@RequestMapping("/CountyVsProductionByYear/filter/year/{year}")
 	public List<CountyVsProductionByYearModel> findByYear(@PathVariable int year) {
-		return countyVsProductionByYearService.findByYear(year);
+		return countyVsProductionByYearService.findByreportingyear(year);
 	}
 
-=======
->>>>>>> a17ded64657883fd31b72f3e5ec557fe0e8878d1
 }
