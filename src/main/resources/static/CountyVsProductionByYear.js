@@ -49,25 +49,27 @@ d3.json('http://localhost:8080/CountyVsProductionByYear').then((data) => {
 		/* Your Options */
 
 		search: true,
-		multiLimit: 32,
 		hideSelected: true,
 		hideDisabled: true,
 		multiShowCount: false,
 		multiContainer: true
 	});
-})
+return select;
+}).then(select => {
 var utility;
 d3.selectAll(("input[name='utility']")).on("change", function () {
 	utility = this.value;
 	createGraph(this.value);
-})
+});
 
 select.on("change", function () {
 	console.log("hello");
 	console.log(utility);
 	createGraph(utility);
+});
 
-})
+});
+
 function arrayToObject(arr) {
 	var obj = {};
 	for (var i = 0; i < arr.length; ++i){
