@@ -26,7 +26,6 @@ d3.json('http://localhost:8080/CompanyVsProductionByYear').then((data) => {
 		return a.year - b.year;
 	}
 	data = data.sort(sortByDate);
-
 	//sort data into companies
 	var dataGroup = d3.nest()
 		.key(function (d) {

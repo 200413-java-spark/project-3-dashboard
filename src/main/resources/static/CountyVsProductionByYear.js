@@ -26,7 +26,6 @@ d3.json('http://localhost:8080/CountyVsProductionByYear').then((data) => {
 		return a.reportingyear - b.reportingyear;
 	}
 	data = data.sort(sortByDate);
-
 	//sort data into counties
 	var dataGroup = d3.nest()
 		.key(function (d) {
@@ -94,7 +93,6 @@ function createGraph(utility) {
 			return a.reportingyear - b.reportingyear;
 		}
 		data = data.sort(sortByDate);
-
 		//sort data into counties
 		var dataGroup = d3.nest()
 			.key(function (d) {
