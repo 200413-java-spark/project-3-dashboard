@@ -52,7 +52,8 @@ d3.json('http://localhost:8080/CompanyVsProductionByYear').then((data) => {
 		hideSelected: true,
 		hideDisabled: true,
 		multiShowCount: false,
-		multiContainer: true
+		multiContainer: true,
+		width: 1200
 	});
 
 return select;

@@ -1,6 +1,6 @@
 const margin = ({ top: 20, right: 30, bottom: 30, left: 80 });
-const width = 960 - margin.left - margin.right;
-const height = 500 - margin.top - margin.bottom;
+const width = 1200 - margin.left - margin.right;
+const height = 600 - margin.top - margin.bottom;
 const svg = d3.select("#info").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
@@ -52,7 +52,8 @@ d3.json('http://localhost:8080/CountyVsProductionByYear').then((data) => {
 		hideSelected: true,
 		hideDisabled: true,
 		multiShowCount: false,
-		multiContainer: true
+		multiContainer: true,
+		width: 1200
 	});
 return select;
 }).then(select => {

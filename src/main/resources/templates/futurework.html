@@ -9,9 +9,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link type="text/css" rel="stylesheet" href="/selection/tail.select-default.css" />
   <link href="dashboard.css" rel="stylesheet">
-  <title>County vs Oil View</title>
+  <title>Oil, Gas, and Water Production</title>
 
   <style>
     .bd-placeholder-img {
@@ -32,7 +31,7 @@
 </head>
 
 <body>
-  <!-- Top navigation bar -->
+  <!-- Top navigation bar-->
   <nav class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="http://localhost:8080/index">OIL, GAS, WATER
       PRODUCTION</a>
@@ -73,9 +72,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="CountyVsProductionByYearView">
+              <a class="nav-link" href="CountyVsProductionByYearView">
                 <span data-feather="bar-chart-2"></span>
-                County <span class="sr-only">(current)</span>
+                County
               </a>
             </li>
           </ul>
@@ -106,9 +105,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="futurework">
+              <a class="nav-link active" href="futurework">
                 <span data-feather="file-text"></span>
-                Future Work
+                Future Work <span class="sr-only">(current)</span>
               </a>
             </li>
           </ul>
@@ -116,13 +115,11 @@
       </nav>
     </div>
   </div>
-
-
   <!-- Page title and some buttons-->
   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div
       class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">County View</h1>
+      <h1 class="h2">Future Work</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group mr-2">
           <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -136,23 +133,36 @@
     </div>
 
     <!-- Page content below -->
-    <form id="utility">
-      <input type="radio" name="utility" value="oil">Oil
-      <input type="radio" name="utility" value="gas">Gas
-      <input type="radio" name="utility" value="water">Water<br>
-    </form>
-    </div>
-
-    <div id="info">
+    <div class="futurework-content">
 
     </div>
-    <div>
-      <select multiple id="counties">
-      </select>
-    </div>
+    <!-- Here is the start of the website's footer -->
+    <!-- <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+            <p>Some of the technologies used in the project are:
+              <li>Apache Spark</li>
+              <li>Maven</li>
+              <li>JUnit</li>
+              <li>S3 with AWS/EMR</li>
+              <li>PostgreSQL</li>
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <p>One N Main St, Houston, TX 77002
+              <br />support.Analysis@Project3.com
+              <br />+ 01 733 567 88
+              <br />+ 01 292 535 23</p>
+          </div>
+        </div>
+        <div class="footer-copyright text-center">© 2020 Copyright: Project3.com</div>
+    </footer> -->
+
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="/selection/tail.select.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"></script>
@@ -162,15 +172,13 @@
       crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-    <!-- Optional JavaScript -->
-    <script src="CountyVsProductionByYear.js"></script>
     <script>
         (function () {
           'use strict'
           feather.replace()
         }())
     </script>
-
+</body>
 </body>
 
 </html>
