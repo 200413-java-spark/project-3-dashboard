@@ -1,6 +1,7 @@
 package com.github.dashboard.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -11,9 +12,9 @@ public class HelloController {
 		return "index";
 	}
 
-	@RequestMapping("/CountyVsOilProductionByYearView")
-	public String CountyVsOilProductionByYearView() {
-		return "CountyVsOilProductionByYearView";
+	@RequestMapping("/CountyVsProductionByYearView")
+	public String CountyVsProductionByYearView() {
+		return "CountyVsProductionByYearView";
 	}
 
 	@RequestMapping("/MapView")
@@ -21,9 +22,44 @@ public class HelloController {
 		return "MapView";
 	}
 
-	@RequestMapping("/CompanyView")
-	public String CompanyView() {
-		return "CompanyView";
+	@RequestMapping("/CompanyVsProductionByYearView")
+	public String CompanyVsProductionByYearView() {
+		return "CompanyVsProductionByYearView";
+	}
+
+	@RequestMapping("/About")
+	public String AboutView() {
+		return "About";
+	}
+
+	@RequestMapping("/StackBarD3")
+	public String StackBarD3() {
+		return "StackBarD3";
+	}
+
+	@RequestMapping("/county/{county}")
+	public String specificCounty(@PathVariable String county) {
+		return "County";
+	}
+
+	@RequestMapping("/aboutus")
+	public String aboutus() {
+		return "aboutus";
+	}
+
+	@RequestMapping("/members")
+	public String members() {
+		return "members";
+	}
+
+	@RequestMapping("/technologies")
+	public String technologies() {
+		return "technologies";
+	}
+
+	@RequestMapping("/Graph1")
+	public String Graph1() {
+		return "Graph1";
 	}
 
 }

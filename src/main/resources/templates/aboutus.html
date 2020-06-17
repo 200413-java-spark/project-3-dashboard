@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="dashboard.css" rel="stylesheet">
+  <title>About</title>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Navigation Bar-->
+  <nav class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">OIL AND GAS PRODUCTION</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-white w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link active" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="sidebar-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="index">
+                <span data-feather="home"></span>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="MapView">
+                <span data-feather="map"></span>
+                Map
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CompanyVsProductionByYearView">
+                <span data-feather="briefcase"></span>
+                Company
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CountyVsProductionByYearView">
+                <span data-feather="bar-chart-2"></span>
+                CountyvsOilView
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Graph1">
+                <span data-feather="bar-chart-2"></span>
+                Example
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Example
+              </a>
+            </li>
+          </ul>
+
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Documentation</span>
+            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="aboutus">
+                <span data-feather="file-text"></span>
+                About <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="technologies">
+                <span data-feather="file-text"></span>
+                Technologies
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="members">
+                <span data-feather="file-text"></span>
+                Members
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file-text"></span>
+                Future Work
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Display Page title and buttons-->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">About</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+        </div>
+        <!-- All page content below -->
+        <!-- About me section with a picture-->
+        <section class="about-us-section">
+          <div class="container p-1 p-sm-3">
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2>About our Project</h2>
+                <hr />
+              </div>
+
+              <div class="col-md-3">
+                <img class="img-fluid"
+                  src="https://plsadaptive.s3.amazonaws.com/eco/images/channel_content/images/offshore_platform.jpg"
+                  alt="oil and gas picture">
+              </div>
+
+              <div class="col-md-9">
+                <p>"NY State Oil Production" is a project developed by Revature's April 23rd 2020 Big Data Batch.
+                  The purpose of our application is to use all the concepts learned throughout the training program to
+                  build an automated
+                  big data streaming pipeline. Our data source consists of oil and gas information from New York State
+                  Department of Environmental
+                  Conservation Division of Mineral Resources, and our main goal is to provide a visual representation in
+                  real time of the history
+                  of a wellbore's production of oil, gas, or water during its lifecycle. We will provide a Map view of
+                  the state of New York and some
+                  interesting findings displayed in graphs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr />
+
+        <!-- Group leads section -->
+        <section class="our-team-section">
+          <div class="container marketing">
+
+            <!-- Two columns of text below -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2>Our Team Leads</h2>
+                <hr />
+              </div>
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://st2.depositphotos.com/3369547/11386/v/950/depositphotos_113863530-stock-illustration-avatar-man-icon-people-design.jpg"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>DevOps</h2>
+                <p>The DevOps team is led by Sutter Grune. They are in charge of setting up the kafka cluster and stream
+                  data from our source to a consumer, making sure all the proper connections
+                  are well established and up and running.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#devops" role="button">View technologies
+                    &raquo;</a></p>
+              </div><!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://cdn3.iconfinder.com/data/icons/businessman-and-business-woman-avatar/64/Businessman_business_woman_Avatar-05-512.png"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>Quality Assurance</h2>
+                <p>The QA team is led by John Medlock. They are in charge of conducting unit testing, as well as
+                  integration testing
+                  to make sure that every piece of code is reviewed and the quality of the program is at its highest.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#QA" role="button">View technologies &raquo;</a>
+                </p>
+              </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+          </div>
+
+          <div class="container marketing">
+
+            <!-- Two columns of text below -->
+            <div class="row">
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://st2.depositphotos.com/3369547/11386/v/950/depositphotos_113863580-stock-illustration-avatar-man-icon-people-design.jpg"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>Spark</h2>
+                <p>The Spark team is led by Phuc Le. They are in charge of setting up the java streaming in order
+                  to consume the source data and perform useful transformations that will later be
+                  persisted to a PostgreSQL database.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#spark" role="button">View technologies &raquo;</a>
+                </p>
+              </div><!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <img id="employee"
+                  src="https://cdn0.iconfinder.com/data/icons/activities-flat-colorful/2048/2145_-_Holding_flowers-512.png"
+                  class="rounded-circle" alt="Sutter" width="140" height="140">
+                <h2>Dashboard</h2>
+                <p>The Dashbpard team is led by Jeff Magina. They are in charge of creating the web view for
+                  the data that is being streamed. Designing, implemeting, and deploying a functional
+                  dashboard is their main responsability.
+                </p>
+                <p><a class="btn btn-primary" href="technologies#dashboard" role="button">View technologies
+                    &raquo;</a></p>
+              </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+          </div>
+        </section>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="dashboard.js"></script>
+</body>
+</body>
+
+</html>
