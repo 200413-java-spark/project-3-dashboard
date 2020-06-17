@@ -26,7 +26,7 @@ public class CountyVsProductionByYearService {
 		return countyVsProductionByYearRepo.findByCounty(county);
 	}
 
-	public List<CountyVsProductionByYearModel> findByreportingyear(int year) {
+	public List<CountyVsProductionByYearModel> findByreportingyear(String year) {
 		return countyVsProductionByYearRepo.findByreportingyear(year);
 	}
 }
