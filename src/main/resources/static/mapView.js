@@ -1,7 +1,7 @@
 const margin = ({ top: 20, right: 30, bottom: 30, left: 40 });
 const width = 1200 - margin.left - margin.right; //container width
-const height = 500 - margin.top - margin.bottom; // container height
-const projection = d3.geoAlbersUsa().scale(6000).translate([-1000, 880]); //[x- = Left, y+ = Down] 
+const height = 750 - margin.top - margin.bottom; // container height
+const projection = d3.geoAlbersUsa().scale(8000).translate([-1550, 1180]); //[x- = Left, y+ = Down] 
 const path = d3.geoPath().projection(projection);
 const parseYear = d3.timeParse("%Y");
 const tooltip = d3.select("#mapView").append("div")
@@ -61,31 +61,31 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
       if (data[i] === null) {
         continue
       } else {
-        console.log(data[i]);
+        //console.log(data[i]);
         const p = projection([data[i].latitude, data[i].longitude, data[i].year]);
-        console.log(p);
         p.year = parseYear(data[i].year);
         svg.append("circle")
-          .attr("fill", "blue")
+          .attr("fill", "#3366FF")
           .attr("opacity", 0.7)  // makes it not a solid blue
           .style("z-index", 1)
           .attr("transform", `translate(${[p[0], p[1]]})`)
           .attr("r", 5) 		// CHANGE RADIUS based on number of wells (larger/vs smaller circles(bubbles))
           .attr("d", path)
-          .attr("city", data[i].city)
+          .attr("town", data[i].town)
+          .attr("oil", data[i].oil)
+          .attr("gas", data[i].gas)
+          .attr("water", data[i].water)
           .on("mouseover", function () {
             d3.select(this)
               .attr("r", 12);
-            //console.log(d);
+          })
+          .on("mouseover", function (d) {
             tooltip.transition()
-              .duration(200)
-              .style("opacity", 0.9);
-            tooltip.html("City: " + data[i].city + "<br> Oil Production: " + data[i].oil
-              + "<br> Water Production: " + data[i].water
-              + "<br> Gas Production: " + data[i].gas
-              + "<br> Reporting Year: " + data[i].year)
-              .style("left", (d3.mouse(this)[0] + 20) + "px")
-              .style("top", (d3.mouse(this)[1] + 60) + "px");
+            .duration(200)
+            .style("opacity", 0.9);
+          tooltip.html("Town: " + this.attributes.town.nodeValue + "<br> Oil Production: " + this.attributes.oil.nodeValue
+            + "<br> Water Production: " + this.attributes.water.nodeValue
+            + "<br> Gas Production: " + this.attributes.gas.nodeValue);
           })
           .on("mouseout", function () {
             d3.select(this)
