@@ -33,7 +33,7 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
       .enter()
       .append("a")
       .attr("xlink:href", function (d) {
-        return "http://localhost:8080/county/" + d.properties.NAME;// customize "http://localhost:3000//countyName" /////////////////////////////
+        return "http://localhost:8080/county/" + d.properties.NAME;
       })
       .append("path")
       .attr("fill", "LightGray")
@@ -61,7 +61,6 @@ d3.json("https://gist.githubusercontent.com/aale12/e23d49fa2831b800df0b5a628a194
       if (data[i] === null) {
         continue
       } else {
-        //console.log(data[i]);
         const p = projection([data[i].latitude, data[i].longitude, data[i].year]);
         p.year = parseYear(data[i].year);
         svg.append("circle")

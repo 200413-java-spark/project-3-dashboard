@@ -62,4 +62,9 @@ public class HelloController {
 		return "Graph1";
 	}
 
+	@RequestMapping("/futurework")
+	public String futurework() {
+		return "futurework";
+	}
+
 }
