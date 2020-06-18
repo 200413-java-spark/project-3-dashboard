@@ -1,4 +1,4 @@
-const margin = ({ top: 20, right: 30, bottom: 30, left: 80 });
+const margin = ({ top: 20, right: 30, bottom: 30, left: 110 });
 const width = 1200 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
 const svg = d3.select("#info").append("svg")
