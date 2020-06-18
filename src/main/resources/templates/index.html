@@ -33,17 +33,12 @@
 <body>
   <!-- Top navigation bar-->
   <nav class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="https://github.com/200413-java-spark/project-3-QA">OIL AND
-      GAS PRODUCTION</a>
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="http://localhost:8080/index">OIL, GAS, AND WATER
+      PRODUCTION</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
       data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-white w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link active" href="#">Sign out</a>
-      </li>
     </ul>
   </nav>
 
@@ -74,19 +69,7 @@
             <li class="nav-item">
               <a class="nav-link" href="CountyVsProductionByYearView">
                 <span data-feather="bar-chart-2"></span>
-                County vs Oil View
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Graph1">
-                <span data-feather="bar-chart-2"></span>
-                Example
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Example
+                County
               </a>
             </li>
           </ul>
@@ -94,7 +77,6 @@
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span>Documentation</span>
             <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
             </a>
           </h6>
           <ul class="nav flex-column mb-2">
@@ -116,12 +98,6 @@
                 Members
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file-text"></span>
-                Future Work
-              </a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -133,43 +109,354 @@
       class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h1 class="h2">Home</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group mr-2">
-          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-        </div>
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <span data-feather="calendar"></span>
-          This week
-        </button>
       </div>
     </div>
 
     <!-- Page content below -->
+    <div class="main_content">
+      <div class="header">
+        <h3>NY State Oil, Gas, and Water Production</h3>
+      </div>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+              src="https://upload.wikimedia.org/wikipedia/commons/0/0b/West_Texas_Pumpjack.JPG">
+            </img>
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Oil. Burn It.</h1>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#main-content" role="button">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+              src="https://www.aboutpipelines.com/wp-content/uploads/2019/07/BlogImage_July24_v2.jpg">
+            </img>
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Gas. Ignite It.</h1>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#main-content" role="button">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+              src="https://static.timesofisrael.com/www/uploads/2018/01/water-pinkomelet.jpg">
+            </img>
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>Water. Drink It.</h1>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#main-content" role="button">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
-    <!-- Here is the start of the website's footer
+      <div id="main-content" class="info">
+        <div>
+          <h1>NY State Oil, Gas, and Water Production Beginning 2001</h1>
+        </div>
+        <div>
+          <div>
+          </div>
+
+          <p><strong>General Description</strong><br />The Division of Mineral Resources maintains a data management
+            system on wells regulated under the Oil, Gas and Solution Mining Law (OGSML) More than 75,000 wells have
+            been drilled in New York for oil, gas, solution salt mining, stratigraphic, injection, geothermal, brine
+            disposal, and underground gas storage. Computerized records currently exist on roughly 40,000 wells, of
+            which about 14,000 are active. All of this data is created and maintained for the use of the Division, and
+            as such is covered by a disclaimer regarding the use of this data.</p>
+          <p><strong>Data Collection Methodology</strong><br />Information is provided to the Division of Mineral
+            Resources by regulated operators through various regulatory filings. Most of the information provided in
+            this dataset comes from Annual Well Reports filed every year in the spring. This information is used to
+            regulate the oil and gas industry in New York, as well as track the history of a wellbore&rsquo;s production
+            of oil, gas, or water during its lifecycle.</p>
+          <p>Production data is acquired by means of annual well reports submitted by operators to the Division of
+            Mineral Resources in the spring of each year. This data is kept confidential for six months and is released
+            to the Division&rsquo;s public website in early July. During the spring reporting cycle, purchasers and
+            transporters of oil and gas similarly report the quantity of product produced during the reporting year that
+            they either transported or purchased for refining.</p>
+          <p><strong>Statistical and Analytic Issues</strong><br />This data was collected on a per well basis by each
+            operator and supplied to the Division of Mineral Resources for verification. Not all operators who are sent
+            reports end up filing their production reports on time or to the satisfaction of the Division. Through
+            enforcement activities, late filings have been addressed and added to the datasets after the fact and allow
+            for a more complete assessment of the annual production of oil and gas in New York. Late filings are added
+            to the production dataset when the most current dataset is created for distribution. Approximately 85%-90%
+            of operators end up reporting on time and to a satisfactory level. The rest are handled through enforcement
+            activities.</p>
+          <p><strong>Limitations of Data Use</strong><br />Data reported on the Annual Well Report is presumed to be
+            accurate and is double checked against reported values from oil and gas purchasers and transporters.</p>
+          <p><strong>Columns in Dataset</strong></p>
+          <ol>
+            <li>api_well_number: American Petroleum Institute 14 digit Unique Well Identification Number</li>
+            <li>county: county that the well is located in</li>
+            <li>company_name: company that contructed well</li>
+            <li>api_hole_number: the 6th-10th digits of API well number, unique API hole number</li>
+            <li>sidetrack_code: the 11th and 12th digits of API well number, with the original vertical well as "00",
+              and the first directional sidetrack as "01".</li>
+            <li>completion_code: 2 digit Company completion code</li>
+            <li>well_type_code: refer to "Table 1" for respective well type codes</li>
+            <li>production_field: Production field of well</li>
+            <li>well_status_code: refer to "Table 2" for respective well statuc codes</li>
+            <li>well_name: Name of well</li>
+            <li>town: town where well is located</li>
+            <li>producing_Formation: producing formation for the well</li>
+            <li>months_in_production: number of months in production</li>
+            <li>gas_produced_mcf: amount of gas produced (Mcf)</li>
+            <li>water_produced_bbl: amount of water produced (bbl)</li>
+            <li>oil_produced_bbl: amount of oil produced (bbl)</li>
+            <li>reporting_year: last date record was updated</li>
+            <li>new_georeferenced_column: the city, state and longitude, latitude of where the well is located</li>
+          </ol>
+          <div class="center">
+            <table border="1" width="37%">
+              <caption><strong>Table 1: Well Type Codes</strong></caption>
+              <tbody>
+                <tr>
+                  <td>BR</td>
+                  <td>Brine</td>
+                </tr>
+                <tr>
+                  <td>DH</td>
+                  <td>Dry Hole</td>
+                </tr>
+                <tr>
+                  <td>DS</td>
+                  <td>Disposal</td>
+                </tr>
+                <tr>
+                  <td>DW</td>
+                  <td>Dry Wildcat</td>
+                </tr>
+                <tr>
+                  <td>GD</td>
+                  <td>Gas Development</td>
+                </tr>
+                <tr>
+                  <td>GE</td>
+                  <td>Gas Extension</td>
+                </tr>
+                <tr>
+                  <td>GW</td>
+                  <td>Gas Wildcat</td>
+                </tr>
+                <tr>
+                  <td>IG</td>
+                  <td>Gas Injection Well</td>
+                </tr>
+                <tr>
+                  <td>IW</td>
+                  <td>Enhanced Oil Recovery - Injection</td>
+                </tr>
+                <tr>
+                  <td>LP</td>
+                  <td>Liquefied Petroleum Gas Storage</td>
+                </tr>
+                <tr>
+                  <td>MB</td>
+                  <td>Monitoring Brine</td>
+                </tr>
+                <tr>
+                  <td>MM</td>
+                  <td>Monitoring Miscellaneous</td>
+                </tr>
+                <tr>
+                  <td>MS</td>
+                  <td>Monitoring Storage</td>
+                </tr>
+                <tr>
+                  <td>NL</td>
+                  <td>Not Listed</td>
+                </tr>
+                <tr>
+                  <td>OB</td>
+                  <td>Observation Well</td>
+                </tr>
+                <tr>
+                  <td>OD</td>
+                  <td>Oil Development</td>
+                </tr>
+                <tr>
+                  <td>OE</td>
+                  <td>Oil Extension</td>
+                </tr>
+                <tr>
+                  <td>OW</td>
+                  <td>Oil Wildcat</td>
+                </tr>
+                <tr>
+                  <td>SG</td>
+                  <td>Stratigraphic</td>
+                </tr>
+                <tr>
+                  <td>ST</td>
+                  <td>Storage</td>
+                </tr>
+                <tr>
+                  <td>TH</td>
+                  <td>Geothermal</td>
+                </tr>
+                <tr>
+                  <td>UN</td>
+                  <td>Unknown</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>&nbsp;</p>
+            <div class="center">
+              <table border="1">
+                <caption><strong>Table 2: Well Status Codes</strong></caption>
+                <tbody>
+                  <tr>
+                    <td>AC</td>
+                    <td>Active</td>
+                  </tr>
+                  <tr>
+                    <td valign="TOP">AR</td>
+                    <td>Application Received to Drill/Plug/Convert</td>
+                  </tr>
+                  <tr>
+                    <td>CA</td>
+                    <td>Cancelled</td>
+                  </tr>
+                  <tr>
+                    <td>DC</td>
+                    <td>Drilling Completed</td>
+                  </tr>
+                  <tr>
+                    <td>DD</td>
+                    <td>Drilled Deeper</td>
+                  </tr>
+                  <tr>
+                    <td>DG</td>
+                    <td>Drilling in Progress</td>
+                  </tr>
+                  <tr>
+                    <td>DH</td>
+                    <td>Dry Hole</td>
+                  </tr>
+                  <tr>
+                    <td>EX</td>
+                    <td>Expired Permit</td>
+                  </tr>
+                  <tr>
+                    <td>IN</td>
+                    <td>Inactive</td>
+                  </tr>
+                  <tr>
+                    <td>NR</td>
+                    <td valign="TOP">Not Reported on AWR</td>
+                  </tr>
+                  <tr>
+                    <td valign="TOP">PA</td>
+                    <td>Plugged and Abandoned</td>
+                  </tr>
+                  <tr>
+                    <td>PI</td>
+                    <td>Permit Issued</td>
+                  </tr>
+                  <tr>
+                    <td>PM</td>
+                    <td valign="TOP">Plugged Back Multilateral</td>
+                  </tr>
+                  <tr>
+                    <td>RE</td>
+                    <td>Refunded Fee</td>
+                  </tr>
+                  <tr>
+                    <td valign="TOP">RW</td>
+                    <td>Released - Water Well</td>
+                  </tr>
+                  <tr>
+                    <td valign="TOP">SI</td>
+                    <td>Shut-In</td>
+                  </tr>
+                  <tr>
+                    <td valign="TOP">TA</td>
+                    <td>Temporarily Abandoned</td>
+                  </tr>
+                  <tr>
+                    <td>TR</td>
+                    <td>Transferred Permit</td>
+                  </tr>
+                  <tr>
+                    <td>UN</td>
+                    <td>Unknown</td>
+                  </tr>
+                  <tr>
+                    <td>UL</td>
+                    <td>Unknown Located</td>
+                  </tr>
+                  <tr>
+                    <td>UM</td>
+                    <td>Unknown Not Found</td>
+                  </tr>
+                  <tr>
+                    <td>VP</td>
+                    <td>Voided Permit</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>&nbsp;</p>
+          </div>
+          <p>Information from:&nbsp;<a
+              href="https://data.ny.gov/Energy-Environment/Oil-and-Gas-Annual-Production-Beginning-2001/mxea-iw3u">New
+              York State Dept. of Environmental Conservation Division of Mineral Resources</a></p>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Here is the start of the website's footer -->
     <footer class="page-footer">
       <div class="container">
-          <div class="row">
-              <div class="col-lg-8 col-md-8 col-sm-12">
-                  <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
-                  <p>Some of the technologies used in the project are:
-                  <li>Apache Spark</li>
-                  <li>Maven</li>
-                  <li>JUnit</li>
-                  <li>S3 with AWS/EMR</li>
-                  <li>PostgreSQL</li>
-                  </p>
-              </div>
-              <div class="col-lg-4 col-md-4 col-sm-12">
-                  <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                  <p>One N Main St, Houston, TX 77002
-                      <br/>support.Analysis@Project3.com
-                      <br/>+ 01 733 567 88
-                      <br/>+ 01 292 535 23</p>
-              </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+            <p>Some of the technologies used in the project are:
+              <li>Apache Spark</li>
+              <li>Maven</li>
+              <li>JUnit</li>
+              <li>S3 with AWS/EMR</li>
+              <li>PostgreSQL</li>
+            </p>
           </div>
-          <div class="footer-copyright text-center">© 2020 Copyright: Project3.com</div>
-    </footer> -->
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <p>info@revature.com
+              <br>
+              <br />P 703 570 8181
+              <br />CORPORATE
+              <br />HEADQUARTERS
+              <br>
+              <br />11730 Plaza America Dr.
+              <br />2nd Floor
+              <br />Reston, VA 20190.
+            </p>
+          </div>
+        </div>
+        <div class="footer-copyright text-center">Copyright © 2020 Revature, LLC. All Rights Reserved</div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

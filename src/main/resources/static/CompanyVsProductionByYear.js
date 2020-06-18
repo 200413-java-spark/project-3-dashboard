@@ -1,4 +1,4 @@
-const margin = ({ top: 20, right: 30, bottom: 30, left: 80 });
+const margin = ({ top: 20, right: 30, bottom: 30, left: 110 });
 const width = 960 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 const svg = d3.select("#info").append("svg")
@@ -26,7 +26,6 @@ d3.json('http://localhost:8080/CompanyVsProductionByYear').then((data) => {
 		return a.year - b.year;
 	}
 	data = data.sort(sortByDate);
-
 	//sort data into companies
 	var dataGroup = d3.nest()
 		.key(function (d) {
@@ -49,27 +48,27 @@ d3.json('http://localhost:8080/CompanyVsProductionByYear').then((data) => {
 		/* Your Options */
 
 		search: true,
-		multiLimit: 32,
 		hideSelected: true,
 		hideDisabled: true,
 		multiShowCount: false,
-		multiContainer: true
+		multiContainer: true,
+		width: 1200
 	});
 
-
-})
-var utility;
+return select;
+}).then((select) => {
+	var utility;
 d3.selectAll(("input[name='utility']")).on("change", function () {
 	utility = this.value;
 	createGraph(this.value);
 })
-
 select.on("change", function () {
 	console.log("hello");
 	console.log(utility);
 	createGraph(utility);
-
 })
+})
+
 function arrayToObject(arr) {
 	var obj = {};
 	for (var i = 0; i < arr.length; ++i){

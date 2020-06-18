@@ -1,6 +1,6 @@
-const margin = ({ top: 20, right: 30, bottom: 30, left: 80 });
-const width = 960 - margin.left - margin.right;
-const height = 500 - margin.top - margin.bottom;
+const margin = ({ top: 20, right: 30, bottom: 30, left: 110 });
+const width = 1200 - margin.left - margin.right;
+const height = 600 - margin.top - margin.bottom;
 const svg = d3.select("#info").append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
@@ -26,7 +26,6 @@ d3.json('http://localhost:8080/CountyVsProductionByYear').then((data) => {
 		return a.reportingyear - b.reportingyear;
 	}
 	data = data.sort(sortByDate);
-
 	//sort data into counties
 	var dataGroup = d3.nest()
 		.key(function (d) {
@@ -49,25 +48,28 @@ d3.json('http://localhost:8080/CountyVsProductionByYear').then((data) => {
 		/* Your Options */
 
 		search: true,
-		multiLimit: 32,
 		hideSelected: true,
 		hideDisabled: true,
 		multiShowCount: false,
-		multiContainer: true
+		multiContainer: true,
+		width: 1200
 	});
-})
+return select;
+}).then(select => {
 var utility;
 d3.selectAll(("input[name='utility']")).on("change", function () {
 	utility = this.value;
 	createGraph(this.value);
-})
+});
 
 select.on("change", function () {
 	console.log("hello");
 	console.log(utility);
 	createGraph(utility);
+});
 
-})
+});
+
 function arrayToObject(arr) {
 	var obj = {};
 	for (var i = 0; i < arr.length; ++i){
@@ -91,7 +93,6 @@ function createGraph(utility) {
 			return a.reportingyear - b.reportingyear;
 		}
 		data = data.sort(sortByDate);
-
 		//sort data into counties
 		var dataGroup = d3.nest()
 			.key(function (d) {
