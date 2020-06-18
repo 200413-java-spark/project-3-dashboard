@@ -11,7 +11,7 @@ import com.github.dashboard.models.CountyVsProductionByYearModel;
 public interface CountyVsProductionByYearRepo extends JpaRepository<CountyVsProductionByYearModel, Integer> {
   List<CountyVsProductionByYearModel> findByCounty(String county);
 
-  List<CountyVsProductionByYearModel> findByreportingyear(int year);
+  List<CountyVsProductionByYearModel> findByreportingyear(String year);
 
   // List<CountyVsProductionByYearModel>
   // findByOilProductionGreaterThanEqual(double oilProduction);

@@ -1,3 +1,4 @@
+
 package com.github.dashboard.controllers;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,5 +18,4 @@ public class HelloControllerTest {
 	public void contexLoads() throws Exception {
 		assertThat(controller).isNotNull();
 	}
-
 }

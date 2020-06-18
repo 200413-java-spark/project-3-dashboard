@@ -1,9 +1,9 @@
+
 package com.github.dashboard.controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +12,6 @@ import com.github.dashboard.models.CountyVsProductionByYearModel;
 import com.github.dashboard.services.CountyVsProductionByYearService;
 
 @RestController
-@CrossOrigin
 public class CountyVsProductionByYearController {
 
 	@Autowired
@@ -34,7 +33,7 @@ public class CountyVsProductionByYearController {
 	}
 
 	@RequestMapping("/CountyVsProductionByYear/filter/year/{year}")
-	public List<CountyVsProductionByYearModel> findByYear(@PathVariable int year) {
+	public List<CountyVsProductionByYearModel> findByYear(@PathVariable String year) {
 		return countyVsProductionByYearService.findByreportingyear(year);
 	}
 }
